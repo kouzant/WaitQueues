@@ -56,7 +56,7 @@ public class Booking {
         sb.append("First Name: ");
         sb.append(firstName);
         sb.append("\n");
-        sb.append("Last Name");
+        sb.append("Last Name: ");
         sb.append(lastName);
         sb.append("\n");
         sb.append("Phone Number: ");
