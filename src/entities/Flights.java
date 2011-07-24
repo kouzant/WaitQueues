@@ -8,14 +8,18 @@ public class Flights {
     private String arrival;
     private Date depTime;
     private Date arrTime;
+    private int totalSeats;
+    private int availSeats;
 
     public Flights(String flightCode, String departure, String arrival,
-            Date depTime, Date arrTime){
+            Date depTime, Date arrTime, int totalSeats, int availSeats){
         this.flightCode = flightCode;
         this.departure = departure;
         this.arrival = arrival;
         this.depTime = depTime;
         this.arrTime = arrTime;
+        this.totalSeats = totalSeats;
+        this.availSeats = availSeats;
     }
     public String getFlightCode(){
         return flightCode;
@@ -46,6 +50,12 @@ public class Flights {
     }
     public void setArrTime(Date arrTime){
         this.arrTime = arrTime;
+    }
+    public void setTotalSeats(int totalSeats){
+        this.totalSeats = totalSeats;
+    }
+    public void setAvailSeats(int availSeats){
+        this.availSeats = availSeats;
     }
     
     @Override

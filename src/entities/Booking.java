@@ -1,11 +1,19 @@
 package entities;
 
+import java.util.Date;
+
 public class Booking {
     private String id;
+    private String passportID;
     private String firstName;
     private String lastName;
     private long phNumber;
     private String address;
+    private String flightCode;
+    private long cardSerial;
+    private int cardCode;
+    private Date bookArrTime;
+    private Date bookServTime;
 
     public Booking(String id, String firstName, String lastName, long phNumber,
             String address) {
