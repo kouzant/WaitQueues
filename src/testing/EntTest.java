@@ -20,7 +20,7 @@ public class EntTest {
         
         Date depTime = new GregorianCalendar(2011, 7, 20, 14, 21).getTime();
         Date arrTime = new GregorianCalendar(2011, 7, 20, 16, 10).getTime();
-        Flights newFlight = new Flights("d", "Athens", "London", depTime, arrTime);
-        System.out.println(newFlight);
+        //Flights newFlight = new Flights("d", "Athens", "London", depTime, arrTime);
+        //System.out.println(newFlight);
     }
 }
