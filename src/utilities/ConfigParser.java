@@ -29,7 +29,6 @@ public class ConfigParser {
         return props.getProperty("Config");
     }
     public String getFile(String file){
-        return props.getProperty(file, "/home/antonis/NetBeansProjects/"
-                + "WaitQueues/config/defaultFile");
+        return props.getProperty(file, "config/defaultFile");
     }
 }

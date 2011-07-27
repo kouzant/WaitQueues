@@ -13,7 +13,7 @@ import utilities.*;
  */
 public class ParserTest {
     public static void main(String args[]){
-        String config = "/home/antonis/NetBeansProjects/WaitQueues/config/config";
+        String config = "config/config";
         ConfigParser cp = new ConfigParser(new File(config));
         String file1 = cp.getFile("file1");
         BookParser bp = new BookParser(file1);
