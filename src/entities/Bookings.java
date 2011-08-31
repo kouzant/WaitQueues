@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Date;
 
-public class Booking {
+public class Bookings {
     private String id;
     private String passportID;
     private String firstName;
@@ -15,17 +15,25 @@ public class Booking {
     private Date bookArrTime;
     private Date bookServTime;
 
-    public Booking(String id, String firstName, String lastName, long phNumber,
-            String address) {
+    public Bookings(String id, String passportID, String firstName,
+            String lastName, long phNumber, String address, String flightCode,
+            long cardSerial, int cardCode) {
         this.id = id;
+        this.passportID = passportID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phNumber = phNumber;
         this.address = address;
+        this.flightCode = flightCode;
+        this.cardSerial = cardSerial;
+        this.cardCode = cardCode;
     }
     
     public String getId(){
         return id;
+    }
+    public String getPassportID(){
+        return passportID;
     }
     public String getFirstName(){
         return firstName;
@@ -38,6 +46,15 @@ public class Booking {
     }
     public String getAddress(){
         return address;
+    }
+    public String getFlightCode(){
+        return flightCode;
+    }
+    public long getCardSerial(){
+        return cardSerial;
+    }
+    public int getCardCode(){
+        return cardCode;
     }
     public void setId(String id){
         this.id = id;
@@ -54,12 +71,21 @@ public class Booking {
     public void setAddress(String address){
         this.address = address;
     }
+    public void setBookArrTime(Date bookArrTime){
+        this.bookArrTime = bookArrTime;
+    }
+    public void setBookServTime(Date bookServTime){
+        this.bookServTime = bookServTime;
+    }
     
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("ID number: ");
         sb.append(id);
+        sb.append("\n");
+        sb.append("Passport ID: ");
+        sb.append(passportID);
         sb.append("\n");
         sb.append("First Name: ");
         sb.append(firstName);
@@ -72,6 +98,15 @@ public class Booking {
         sb.append("\n");
         sb.append("Address: ");
         sb.append(address);
+        sb.append("\n");
+        sb.append("Flight Code: ");
+        sb.append(flightCode);
+        sb.append("\n");
+        sb.append("Card Number: ");
+        sb.append(cardSerial);
+        sb.append("\n");
+        sb.append("Card Code: ");
+        sb.append(cardCode);
         sb.append("\n");
         return sb.toString();
     }

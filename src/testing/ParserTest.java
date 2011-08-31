@@ -14,6 +14,7 @@ import utilities.*;
 public class ParserTest {
     public static void main(String args[]){
         String config = "config/config";
+        Lists.Initialize();
         ConfigParser cp = new ConfigParser(new File(config));
         String file1 = cp.getFile("file1");
         BookParser bp = new BookParser(file1);
