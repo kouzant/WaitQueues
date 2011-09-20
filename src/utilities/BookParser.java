@@ -21,6 +21,7 @@ public class BookParser {
             String newLine;
             while((newLine = breader.readLine()) != null){
                 String[] tokens = newLine.split("[-]");
+                
                 book.book(tokens[0], tokens[1], tokens[2], tokens[3], 
                         Long.valueOf(tokens[4]), tokens[5], tokens[6], 
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]));

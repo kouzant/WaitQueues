@@ -4,7 +4,10 @@
  */
 package testing;
 
+import entities.Flights;
 import java.io.File;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import utilities.*;
 
 /**
@@ -14,9 +17,23 @@ import utilities.*;
 public class ParserTest {
     public static void main(String args[]){
         String config = "config/config";
-        Lists.Initialize();
+        new Cache();
         ConfigParser cp = new ConfigParser(new File(config));
         String file1 = cp.getFile("file1");
+        
+        //Create the flights
+        Date departureDate = new GregorianCalendar(2011,04,15,18,15).getTime();
+        Date arrivalDate = new GregorianCalendar(2011,04,15,21,00).getTime();
+        Flights flight=new Flights("EZY1234", "Athens", "London", departureDate, arrivalDate,
+                100, 100);
+        Cache.addFlight(flight);
+        flight=new Flights("EZY1235", "Athens", "London", departureDate, arrivalDate,
+                100, 50);
+        Cache.addFlight(flight);
+        flight=new Flights("EZY1236", "Athens", "London", departureDate, arrivalDate,
+                100, 50);
+        Cache.addFlight(flight);
+
         BookParser bp = new BookParser(file1);
         bp.parseBooks();
     }

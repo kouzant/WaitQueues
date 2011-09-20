@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Flights {
     private String flightCode;
@@ -10,6 +11,7 @@ public class Flights {
     private Date arrTime;
     private int totalSeats;
     private int availSeats;
+    private LinkedList<Bookings> bookings;
 
     public Flights(String flightCode, String departure, String arrival,
             Date depTime, Date arrTime, int totalSeats, int availSeats){
@@ -20,6 +22,7 @@ public class Flights {
         this.arrTime = arrTime;
         this.totalSeats = totalSeats;
         this.availSeats = availSeats;
+        this.bookings = new LinkedList<Bookings>();
     }
     public String getFlightCode(){
         return flightCode;
@@ -35,6 +38,9 @@ public class Flights {
     }
     public Date getArrTime(){
         return arrTime;
+    }
+    public LinkedList<Bookings> getBookings(){
+        return bookings;
     }
     public void setFlightCode(String flightCode){
         this.flightCode = flightCode;
