@@ -28,7 +28,7 @@ public class ParserTest {
                 100, 100);
         Cache.addFlight(flight);
         flight=new Flights("EZY1235", "Athens", "London", departureDate, arrivalDate,
-                100, 50);
+                100, 0);
         Cache.addFlight(flight);
         flight=new Flights("EZY1236", "Athens", "London", departureDate, arrivalDate,
                 100, 50);

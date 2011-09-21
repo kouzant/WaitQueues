@@ -27,13 +27,25 @@ public class Booking {
         Bookings newCustomer = new Bookings(id, passportID, firstName, lastName,
                                     phNumber, address, flightCode, cardSerial,
                                     cardCode);
-        flight.getBookings().add(newCustomer);
+        if(flight.getAvailability()){
+            flight.getBookings().add(newCustomer);
+            flight.decrAvail();
+        }else{
+            flight.getAwaiting().add(newCustomer);
+        }
+        
+        
     }
     public void printCustomers(){
         LinkedList<Flights> flights = Cache.getFList();
         Iterator<Flights> FList = flights.iterator();
         while(FList.hasNext()){
-            System.out.println(FList.next().getBookings());
+            Flights flight = FList.next();
+            System.out.println(flight);
+            System.out.println("--Booking list--");
+            System.out.println(flight.getBookings());
+            System.out.println("--Awaiting list--");
+            System.out.print(flight.getAwaiting());
         }
     }
 }

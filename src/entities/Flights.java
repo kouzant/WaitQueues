@@ -12,6 +12,7 @@ public class Flights {
     private int totalSeats;
     private int availSeats;
     private LinkedList<Bookings> bookings;
+    private LinkedList<Bookings> awaiting;
 
     public Flights(String flightCode, String departure, String arrival,
             Date depTime, Date arrTime, int totalSeats, int availSeats){
@@ -23,6 +24,7 @@ public class Flights {
         this.totalSeats = totalSeats;
         this.availSeats = availSeats;
         this.bookings = new LinkedList<Bookings>();
+        this.awaiting = new LinkedList<Bookings>();
     }
     public String getFlightCode(){
         return flightCode;
@@ -39,8 +41,17 @@ public class Flights {
     public Date getArrTime(){
         return arrTime;
     }
+    public boolean getAvailability(){
+        if(availSeats > 0)
+            return true;
+        else
+            return false;
+    }
     public LinkedList<Bookings> getBookings(){
         return bookings;
+    }
+    public LinkedList<Bookings> getAwaiting(){
+        return awaiting;
     }
     public void setFlightCode(String flightCode){
         this.flightCode = flightCode;
@@ -63,7 +74,9 @@ public class Flights {
     public void setAvailSeats(int availSeats){
         this.availSeats = availSeats;
     }
-    
+    public void decrAvail(){
+        availSeats--;
+    }
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -82,6 +95,10 @@ public class Flights {
         sb.append("Arrival Time: ");
         sb.append(arrTime);
         sb.append("\n");
+        sb.append("Available Seats: ");
+        sb.append(availSeats);
+        sb.append("Awaiting Passengers: ");
+        sb.append(awaiting.size());
         return sb.toString();
     }
 }
