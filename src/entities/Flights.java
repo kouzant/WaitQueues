@@ -10,7 +10,7 @@ public class Flights {
     private Date depTime;
     private Date arrTime;
     private int totalSeats;
-    private int availSeats;
+    private int availSeats; // 
     private LinkedList<Bookings> bookings;
     private LinkedList<Bookings> awaiting;
 

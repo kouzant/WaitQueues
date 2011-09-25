@@ -13,7 +13,7 @@ public class Bookings {
     private long cardSerial;
     private int cardCode;
     private Date bookArrTime;
-    private Date bookServTime;
+    private Date bookServTime; // πόσο έκανα wait();
 
     public Bookings(String id, String passportID, String firstName,
             String lastName, long phNumber, String address, String flightCode,

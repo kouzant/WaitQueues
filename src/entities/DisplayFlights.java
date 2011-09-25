@@ -1,18 +1,15 @@
-package entities;
-
-import .*;
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
 /*
- * DisplayFlights.java
+ * WaitQueueGUI.java
  *
- * Created on Sep 24, 2011, 6:52:48 PM
+ * Created on Sep 2, 2011, 10:25:08 PM
  */
 
+package entities;
 /**
  *
  * @author christos
@@ -75,14 +72,21 @@ public class DisplayFlights extends javax.swing.JFrame {
         jLabel2.setText("Από:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Αθήνα", "Θεσσαλονίκη", "Ιωάννινα", "Ηράκλειο" }));
+        jComboBox1.setAutoscrolls(true);
 
         jButton2.setText("Προβολή Στοιχείων");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayData(evt);
+            }
+        });
 
         jLabel3.setText("Προς:");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Θεσσαλονίκη", "Αθήνα", "Ιωάννινα", "Ηράκλειο" }));
 
         buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setSelected(true);
         jRadioButton3.setText("Προβολή δρομολογίων  μιας πτήσης");
 
         buttonGroup1.add(jRadioButton4);
@@ -152,6 +156,11 @@ public class DisplayFlights extends javax.swing.JFrame {
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09:00", "09:45", "10:15", "19:30", "20:10", "22:00", "" }));
 
         jButton3.setText("Συνέχεια...");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fligthReservation(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -226,6 +235,11 @@ public class DisplayFlights extends javax.swing.JFrame {
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09:00", "09:45", "10:15", "19:30", "20:10", "22:00", "" }));
 
         jButton4.setText("Συνέχεια...");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flightCancellation(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -281,38 +295,40 @@ public class DisplayFlights extends javax.swing.JFrame {
         );
 
         jButton1.setText("Λήξη Προσομοίωσης");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopSimulation(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18));
         jLabel1.setForeground(new java.awt.Color(144, 153, 151));
-        jLabel1.setText("Καλώς ήλθατε στο προσομοιωτικό σύστημα κράτησης αεροπορικών πτήσεων");
+        jLabel1.setText("Καλώς ήλθατε στο προσομοιωτικό σύστημα κράτησης αεροπορικών εισητηρίων");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel1)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(358, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(353, 353, 353))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(353, 353, 353))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(41, 41, 41))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -327,6 +343,22 @@ public class DisplayFlights extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void displayData(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayData
+        // jButton2 handler:
+    }//GEN-LAST:event_displayData
+
+    private void fligthReservation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fligthReservation
+        // jButton3 handler:
+    }//GEN-LAST:event_fligthReservation
+
+    private void flightCancellation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightCancellation
+        // jButton4 handler:
+    }//GEN-LAST:event_flightCancellation
+
+    private void stopSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulation
+        // jButton1 handler:
+    }//GEN-LAST:event_stopSimulation
 
     /**
     * @param args the command line arguments

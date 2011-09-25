@@ -107,7 +107,7 @@ public class WaitQueueGUI extends java.awt.Panel {
 
         jLabel3.setText("Διδάσκων:");
 
-        jTextField3.setFont(new java.awt.Font("DialogInput", 1, 12)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("DialogInput", 1, 12));
         jTextField3.setText("Φώτης Γεωργιακώδης");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -144,7 +144,7 @@ public class WaitQueueGUI extends java.awt.Panel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 16));
         jLabel4.setForeground(java.awt.Color.black);
         jLabel4.setText("Εισαγωγικά Στοιχεία");
 
@@ -158,67 +158,67 @@ public class WaitQueueGUI extends java.awt.Panel {
         jDesktopPane1.add(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel7.setText("e-mail:");
-        jLabel7.setBounds(220, 60, 50, 15);
+        jLabel7.setBounds(220, 60, 50, -1);
         jDesktopPane1.add(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel8.setText("Όνομα:");
-        jLabel8.setBounds(20, 20, 51, 20);
+        jLabel8.setBounds(20, 20, -1, 20);
         jDesktopPane1.add(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField4.setEditable(false);
         jTextField4.setText("Αντώνης");
-        jTextField4.setBounds(70, 20, 59, 19);
+        jTextField4.setBounds(70, 20, -1, -1);
         jDesktopPane1.add(jTextField4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField5.setEditable(false);
         jTextField5.setText("Κουζούπης");
-        jTextField5.setBounds(210, 20, 72, 20);
+        jTextField5.setBounds(210, 20, -1, 20);
         jDesktopPane1.add(jTextField5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField6.setEditable(false);
         jTextField6.setText("Π06ΧΧΧ");
-        jTextField6.setBounds(150, 60, 50, 19);
+        jTextField6.setBounds(150, 60, 50, -1);
         jDesktopPane1.add(jTextField6, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField7.setEditable(false);
-        jTextField7.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jTextField7.setFont(new java.awt.Font("Courier New", 1, 12));
         jTextField7.setText("kouzoupis.ant@gmail.com");
-        jTextField7.setBounds(270, 60, 170, 18);
+        jTextField7.setBounds(270, 60, 170, -1);
         jDesktopPane1.add(jTextField7, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel9.setText("Αριθμός Μητρώου:");
-        jLabel9.setBounds(10, 60, 140, 15);
+        jLabel9.setBounds(10, 60, 140, -1);
         jDesktopPane1.add(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jDesktopPane2.setBackground(new java.awt.Color(215, 215, 215));
         jDesktopPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "2ο μέλος", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), java.awt.Color.darkGray)); // NOI18N
 
         jTextField8.setEditable(false);
-        jTextField8.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jTextField8.setFont(new java.awt.Font("Courier New", 1, 12));
         jTextField8.setText("christos@tsopokis.gr");
-        jTextField8.setBounds(270, 60, 150, 18);
+        jTextField8.setBounds(270, 60, 150, -1);
         jDesktopPane2.add(jTextField8, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel10.setText("e-mail:");
-        jLabel10.setBounds(220, 60, 50, 15);
+        jLabel10.setBounds(220, 60, 50, -1);
         jDesktopPane2.add(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField9.setEditable(false);
         jTextField9.setText("Π06150");
-        jTextField9.setBounds(150, 60, 60, 19);
+        jTextField9.setBounds(150, 60, 60, -1);
         jDesktopPane2.add(jTextField9, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel11.setText("Αριθμός Μητρώου:");
-        jLabel11.setBounds(10, 60, 140, 15);
+        jLabel11.setBounds(10, 60, 140, -1);
         jDesktopPane2.add(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextField10.setEditable(false);
         jTextField10.setText("Χρήστος");
-        jTextField10.setBounds(70, 19, 57, 20);
+        jTextField10.setBounds(70, 19, -1, 20);
         jDesktopPane2.add(jTextField10, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel12.setText("Όνομα:");
-        jLabel12.setBounds(20, 20, 51, 15);
+        jLabel12.setBounds(20, 20, -1, -1);
         jDesktopPane2.add(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel6.setText("Επώνυμο:");
@@ -227,7 +227,7 @@ public class WaitQueueGUI extends java.awt.Panel {
 
         jTextField11.setEditable(false);
         jTextField11.setText("Τσοπόκης");
-        jTextField11.setBounds(210, 20, 64, 20);
+        jTextField11.setBounds(210, 20, -1, 20);
         jDesktopPane2.add(jTextField11, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -274,9 +274,19 @@ public class WaitQueueGUI extends java.awt.Panel {
         );
 
         jButton1.setText("Έναρξη Προσομοίωσης");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startSimulation(evt);
+            }
+        });
         jSplitPane1.setLeftComponent(jButton1);
 
         jButton2.setText("Κλείσιμο Εφαρμογής");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeProgram(evt);
+            }
+        });
         jSplitPane1.setRightComponent(jButton2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -318,6 +328,14 @@ public class WaitQueueGUI extends java.awt.Panel {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSimulation
+        // jButton1 handler:
+    }//GEN-LAST:event_startSimulation
+
+    private void closeProgram(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeProgram
+        // jButton2 handler:
+    }//GEN-LAST:event_closeProgram
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
