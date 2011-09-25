@@ -1,7 +1,10 @@
 package utilities;
 
 import java.io.*;
+import java.util.concurrent.TimeUnit;
+
 import business.Booking;
+import java.util.Random;
 
 public class BookParser {
     private String fileName;
@@ -21,7 +24,13 @@ public class BookParser {
             String newLine;
             while((newLine = breader.readLine()) != null){
                 String[] tokens = newLine.split("[-]");
-                
+                try{
+                    Random random = new Random();
+                    int sleepT = random.nextInt(10) + 5;
+                    TimeUnit.SECONDS.sleep(sleepT);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }
                 book.book(tokens[0], tokens[1], tokens[2], tokens[3], 
                         Long.valueOf(tokens[4]), tokens[5], tokens[6], 
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]));

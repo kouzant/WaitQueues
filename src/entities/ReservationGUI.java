@@ -248,8 +248,6 @@ public class ReservationGUI extends javax.swing.JFrame {
 
         jLabel16.setText("Κωδ. Κάρτας:");
 
-        jTextField2.setEditable(!jRadioButton1.isArmed());
-
         jLabel17.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -262,7 +260,7 @@ public class ReservationGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton2)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -301,7 +299,7 @@ public class ReservationGUI extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(jLabel14)
                     .addComponent(jLabel16))
-                .addContainerGap(450, Short.MAX_VALUE))
+                .addContainerGap(474, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,7 +356,6 @@ public class ReservationGUI extends javax.swing.JFrame {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
-        }
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**

@@ -16,9 +16,8 @@ import utilities.*;
  */
 public class ParserTest {
     public static void main(String args[]){
-        String config = "config/config";
         new Cache();
-        ConfigParser cp = new ConfigParser(new File(config));
+        ConfigParser cp = new ConfigParser();
         String file1 = cp.getFile("file1");
         
         //Create the flights

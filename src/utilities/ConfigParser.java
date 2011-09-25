@@ -10,6 +10,21 @@ import java.util.Properties;
 public class ConfigParser {
     private static Properties props = new Properties();
     
+    public ConfigParser(){
+        File config = new File("config/config");
+        if(config.exists()){
+            try{
+                InputStream is = new FileInputStream(config);
+                props.load(is);
+            }catch(FileNotFoundException e0){
+                e0.printStackTrace();
+            }catch(SecurityException e1){
+                e1.printStackTrace();
+            }catch(IOException e2){
+                e2.printStackTrace();
+            }
+        }
+    }
     public ConfigParser(File configFile){
         if(configFile.exists()){
             try{

@@ -331,6 +331,9 @@ public class WaitQueueGUI extends java.awt.Panel {
 
     private void startSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSimulation
         // jButton1 handler:
+        //Create and store flights' details
+        new utilities.InitFlights();
+        jTextPane1.setText("skata");
     }//GEN-LAST:event_startSimulation
 
     private void closeProgram(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeProgram
