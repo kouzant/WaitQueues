@@ -6,6 +6,7 @@ import java.util.Iterator;
 import entities.Bookings;
 import entities.Flights;
 import utilities.Cache;
+import utilities.Timer;
 
 public class Booking {
     private LinkedList<Bookings> customers;
@@ -31,6 +32,7 @@ public class Booking {
             flight.getBookings().add(newCustomer);
             flight.decrAvail();
         }else{
+            newCustomer.setBookWaitStart(Timer.getTime());
             flight.getAwaiting().add(newCustomer);
         }
         
