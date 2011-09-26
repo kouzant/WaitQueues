@@ -25,9 +25,11 @@ public class BookParser {
             while((newLine = breader.readLine()) != null){
                 String[] tokens = newLine.split("[-]");
                 long curTime = Timer.getTime();
+                System.err.println("curTime: "+curTime);
                 try{
                     Random random = new Random();
                     int sleepT = random.nextInt(10) + 5;
+                    System.err.println("Delay: "+sleepT);
                     TimeUnit.SECONDS.sleep(sleepT);
                 }catch(InterruptedException e){
                     e.printStackTrace();

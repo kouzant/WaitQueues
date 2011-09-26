@@ -118,6 +118,12 @@ public class Bookings {
         sb.append("Card Code: ");
         sb.append(cardCode);
         sb.append("\n");
+        sb.append("Serice Time: ");
+        sb.append(bookServTime);
+        sb.append("\n");
+        sb.append("Awaiting Time Start: ");
+        sb.append(bookWaitStart);
+        sb.append("\n");
         return sb.toString();
     }
 }
