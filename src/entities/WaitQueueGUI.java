@@ -256,8 +256,18 @@ public class WaitQueueGUI extends javax.swing.JFrame {
         );
 
         jButton1.setText("Έναρξη Προσομοίωσης");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Κλείσιμο Προγράμματος");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,13 +307,26 @@ public class WaitQueueGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // call timer...
+        super.setVisible(false);
+        DisplayFlights newDisplayFlights = new DisplayFlights();
+        newDisplayFlights.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
     * @param args the command line arguments
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WaitQueueGUI().setVisible(true);
+                WaitQueueGUI newWaitQueueGUI = new WaitQueueGUI();
+                newWaitQueueGUI.setVisible(true);
             }
         });
     }

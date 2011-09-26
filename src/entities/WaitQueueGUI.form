@@ -405,11 +405,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x388;&#x3bd;&#x3b1;&#x3c1;&#x3be;&#x3b7; &#x3a0;&#x3c1;&#x3bf;&#x3c3;&#x3bf;&#x3bc;&#x3bf;&#x3af;&#x3c9;&#x3c3;&#x3b7;&#x3c2;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x39a;&#x3bb;&#x3b5;&#x3af;&#x3c3;&#x3b9;&#x3bc;&#x3bf; &#x3a0;&#x3c1;&#x3bf;&#x3b3;&#x3c1;&#x3ac;&#x3bc;&#x3bc;&#x3b1;&#x3c4;&#x3bf;&#x3c2;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
