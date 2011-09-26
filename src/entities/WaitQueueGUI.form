@@ -88,7 +88,7 @@
                       <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="672" max="32767" attributes="0"/>
+                  <EmptySpace pref="716" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -183,7 +183,7 @@
                               <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <EmptySpace pref="74" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
@@ -370,7 +370,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="883" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="909" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>

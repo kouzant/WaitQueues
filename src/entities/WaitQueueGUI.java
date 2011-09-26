@@ -310,6 +310,8 @@ public class WaitQueueGUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // call timer...
         super.setVisible(false);
+        new utilities.InitFlights();
+        new utilities.Timer();
         DisplayFlights newDisplayFlights = new DisplayFlights();
         newDisplayFlights.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
