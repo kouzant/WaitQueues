@@ -14,10 +14,11 @@ public class Bookings {
     private int cardCode;
     private long bookWaitStart;
     private long bookServTime;
+    private String bookID;
 
     public Bookings(String id, String passportID, String firstName,
             String lastName, long phNumber, String address, String flightCode,
-            long cardSerial, int cardCode, long bookServTime) {
+            long cardSerial, int cardCode, long bookServTime, String bookID) {
         this.id = id;
         this.passportID = passportID;
         this.firstName = firstName;
@@ -29,6 +30,7 @@ public class Bookings {
         this.cardCode = cardCode;
         this.bookServTime = bookServTime;
         this.bookWaitStart = 0L;
+        this.bookID = bookID;
     }
     
     public String getId(){
@@ -57,6 +59,12 @@ public class Bookings {
     }
     public int getCardCode(){
         return cardCode;
+    }
+    public String getBookID(){
+        return bookID;
+    }
+    public long getBookServTime(){
+        return bookServTime;
     }
     public void setId(String id){
         this.id = id;
