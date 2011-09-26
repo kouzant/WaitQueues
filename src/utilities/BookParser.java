@@ -24,6 +24,7 @@ public class BookParser {
             String newLine;
             while((newLine = breader.readLine()) != null){
                 String[] tokens = newLine.split("[-]");
+                long curTime = Timer.getTime();
                 try{
                     Random random = new Random();
                     int sleepT = random.nextInt(10) + 5;
@@ -31,9 +32,11 @@ public class BookParser {
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }
+                long delay = Timer.getTime() - curTime;
                 book.book(tokens[0], tokens[1], tokens[2], tokens[3], 
                         Long.valueOf(tokens[4]), tokens[5], tokens[6], 
-                        Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]));
+                        Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]),
+                        delay);
             }
             book.printCustomers();
         }catch(FileNotFoundException e0){

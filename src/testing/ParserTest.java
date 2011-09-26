@@ -19,6 +19,7 @@ public class ParserTest {
         new Cache();
         ConfigParser cp = new ConfigParser();
         String file1 = cp.getFile("file1");
+        new Timer();
         
         //Create the flights
         Date departureDate = new GregorianCalendar(2011,04,15,18,15).getTime();
@@ -29,9 +30,11 @@ public class ParserTest {
         flight=new Flights("EZY1235", "Athens", "London", departureDate, arrivalDate,
                 100, 0);
         Cache.addFlight(flight);
+
         flight=new Flights("EZY1236", "Athens", "London", departureDate, arrivalDate,
                 100, 50);
         Cache.addFlight(flight);
+
 
         BookParser bp = new BookParser(file1);
         bp.parseBooks();

@@ -13,11 +13,11 @@ public class Bookings {
     private long cardSerial;
     private int cardCode;
     private Date bookArrTime;
-    private Date bookServTime; // πόσο έκανα wait();
+    private long bookServTime; // πόσο έκανα wait();
 
     public Bookings(String id, String passportID, String firstName,
             String lastName, long phNumber, String address, String flightCode,
-            long cardSerial, int cardCode) {
+            long cardSerial, int cardCode, long bookServTime) {
         this.id = id;
         this.passportID = passportID;
         this.firstName = firstName;
@@ -27,6 +27,7 @@ public class Bookings {
         this.flightCode = flightCode;
         this.cardSerial = cardSerial;
         this.cardCode = cardCode;
+        this.bookServTime = bookServTime;
     }
     
     public String getId(){
@@ -74,7 +75,7 @@ public class Bookings {
     public void setBookArrTime(Date bookArrTime){
         this.bookArrTime = bookArrTime;
     }
-    public void setBookServTime(Date bookServTime){
+    public void setBookServTime(long bookServTime){
         this.bookServTime = bookServTime;
     }
     
