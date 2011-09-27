@@ -36,7 +36,8 @@ public class Booking {
             flight.getBookings().add(newCustomer);
             flight.decrAvail();
         }else{
-            newCustomer.setBookWaitStart(Timer.getTime());
+            Timer timer = new Timer();
+            newCustomer.setBookWaitStart(timer.getTime());
             flight.getAwaiting().add(newCustomer);
         }
         

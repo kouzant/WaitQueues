@@ -1,20 +1,17 @@
 package utilities;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class Timer {
-    private static long startTime;
-    
-    public Timer(){
-        Date now = new Date();
-        startTime = now.getTime();
+   
+    public void setTimer(){
+        Date prev = new Date();
+        Cache.setStartTime(prev.getTime());
     }
-    
-    public static long getTime(){
+    public long getTime(){
         Date now = new Date();
         long curTime = now.getTime();
-        long inter = curTime-startTime;
+        long inter = curTime - Cache.getStartTime();
         
         return inter;
     }

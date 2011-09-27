@@ -19,7 +19,8 @@ public class ParserTest {
         new Cache();
         ConfigParser cp = new ConfigParser();
         String file1 = cp.getFile("file1");
-        new Timer();
+        Timer timer = new Timer();
+        timer.setTimer();
         
         //Create the flights
         Date departureDate = new GregorianCalendar(2011,04,15,18,15).getTime();

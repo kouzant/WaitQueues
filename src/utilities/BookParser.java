@@ -16,6 +16,7 @@ public class BookParser {
     
     public void parseBooks(){
         try{
+            Timer timer = new Timer();
             FileInputStream fiStream = new FileInputStream(fileName);
             DataInputStream diStream = new DataInputStream(fiStream);
             Booking book = new Booking();
@@ -25,7 +26,7 @@ public class BookParser {
             String newLine;
             while((newLine = breader.readLine()) != null){
                 String[] tokens = newLine.split("[-]");
-                long curTime = Timer.getTime();
+                long curTime = timer.getTime();
                 System.err.println("curTime: "+curTime);
                 try{
                     Random random = new Random();
@@ -35,7 +36,8 @@ public class BookParser {
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }
-                long delay = Timer.getTime() - curTime;
+                long after = timer.getTime();
+                long delay = after - curTime;
                 book.book(tokens[0], tokens[1], tokens[2], tokens[3], 
                         Long.valueOf(tokens[4]), tokens[5], tokens[6], 
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]),
