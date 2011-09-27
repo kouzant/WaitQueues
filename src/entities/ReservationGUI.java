@@ -83,6 +83,7 @@ public class ReservationGUI extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -275,14 +276,16 @@ public class ReservationGUI extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextField9, org.jdesktop.beansbinding.BeanProperty.create("editable"));
         bindingGroup.addBinding(binding);
 
+        jButton3.setText("Ακύρωση");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton2)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
@@ -305,26 +308,26 @@ public class ReservationGUI extends javax.swing.JFrame {
                                 .addComponent(jLabel17)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(228, 228, 228)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jButton1)
-                        .addGap(324, 324, 324))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel13))
-                .addGap(108, 108, 108)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel16))
-                .addContainerGap(474, Short.MAX_VALUE))
+                                .addGap(228, 228, 228))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel13))
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton3))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel14)
+                                .addComponent(jLabel16)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,9 +364,11 @@ public class ReservationGUI extends javax.swing.JFrame {
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(41, 41, 41))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -385,6 +390,7 @@ public class ReservationGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

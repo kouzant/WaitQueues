@@ -29,6 +29,7 @@ public class DisplayFlights extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
@@ -69,6 +70,10 @@ public class DisplayFlights extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Επιλέξτε Αφετηρία--", "Αθήνα", "Θεσσαλονίκη", "Ρόδο" }));
         jComboBox1.setAutoscrolls(true);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jComboBox1, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -83,6 +88,9 @@ public class DisplayFlights extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Προς:");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jComboBox2, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setSelected(true);
@@ -105,14 +113,14 @@ public class DisplayFlights extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(jLabel3)
                         .addGap(2, 2, 2)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jRadioButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jRadioButton4)))
-                .addContainerGap(507, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(673, Short.MAX_VALUE)
                 .addComponent(jButton2)
@@ -140,11 +148,14 @@ public class DisplayFlights extends javax.swing.JFrame {
 
         jLabel4.setText("Από:");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Αθήνα", "Θεσσαλονίκη", "Ιωάννινα", "Ηράκλειο" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Επιλέξτε Αφετηρία--", "Αθήνα", "Θεσσαλονίκη", "Ρόδο" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Προς:");
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Θεσσαλονίκη", "Αθήνα", "Ιωάννινα", "Ηράκλειο" }));
 
         jLabel6.setText("Ημερομηνία Αναχώρησης:");
 
@@ -178,8 +189,8 @@ public class DisplayFlights extends javax.swing.JFrame {
                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -191,7 +202,7 @@ public class DisplayFlights extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(460, Short.MAX_VALUE))
+                .addContainerGap(368, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +285,7 @@ public class DisplayFlights extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18));
         jLabel1.setForeground(new java.awt.Color(144, 153, 151));
         jLabel1.setText("Καλώς ήλθατε στο προσομοιωτικό σύστημα κράτησης αεροπορικών εισητηρίων");
 
@@ -315,6 +326,8 @@ public class DisplayFlights extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -336,13 +349,35 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        String case1[] = new String[] { "Θεσσαλονίκη", "Ρόδο" };
+        String case2[] = new String[] { "Αθήνα", "Ρόδο" };
+        String case3[] = new String[] { "Αθήνα", "Θεσσαλονίκη" };
         javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
         String startpoint = (String)cb.getSelectedItem();
         if (startpoint.equals("Αθήνα")){
-            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel
-                    (new String[] { "--Επιλέξτε Προορισμό--", "Θεσσαλονίκη", "Ρόδο" }));
-        }
+            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(case1));
+        } else if (startpoint.equals("Θεσσαλονίκη")) {
+            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(case2));
+        } else if (startpoint.equals("Ρόδο")) {
+            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(case3));
+        } 
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        String case1[] = new String[] { "Θεσσαλονίκη", "Ρόδο" };
+        String case2[] = new String[] { "Αθήνα", "Ρόδο" };
+        String case3[] = new String[] { "Αθήνα", "Θεσσαλονίκη" };
+        javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
+        String startpoint = (String)cb.getSelectedItem();
+        if (startpoint.equals("Αθήνα")){
+            jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(case1));
+        } else if (startpoint.equals("Θεσσαλονίκη")) {
+            jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(case2));
+        } else if (startpoint.equals("Ρόδο")) {
+            jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(case3));
+        }
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -376,6 +411,7 @@ public class DisplayFlights extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }

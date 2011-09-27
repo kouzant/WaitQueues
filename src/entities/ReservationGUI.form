@@ -31,9 +31,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jPanel2" alignment="0" pref="835" max="32767" attributes="0"/>
@@ -62,31 +62,32 @@
                               <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="474" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -129,9 +130,12 @@
                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -530,6 +534,11 @@
       <BindingProperties>
         <BindingProperty name="editable" source="jRadioButton2" sourcePath="${selected}" target="jTextField9" targetPath="editable" updateStrategy="0" immediately="false"/>
       </BindingProperties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x391;&#x3ba;&#x3cd;&#x3c1;&#x3c9;&#x3c3;&#x3b7;"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
