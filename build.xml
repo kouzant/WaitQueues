@@ -1,4 +1,4 @@
-<project name="GradeStats" basedir="." default="jar">
+<project name="WaitQueues" basedir="." default="jar">
 
     <property name="src.dir"        value="src"/>
     <property name="build.dir"      value="build"/>
