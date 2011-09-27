@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 import business.Booking;
+import business.CancelBook;
 import java.util.Random;
 
 public class BookParser {
@@ -40,6 +41,9 @@ public class BookParser {
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]),
                         delay);
             }
+            book.printCustomers();
+            new CancelBook("c7311", "EZY1234");
+            System.err.println("lala");
             book.printCustomers();
         }catch(FileNotFoundException e0){
             e0.printStackTrace();
