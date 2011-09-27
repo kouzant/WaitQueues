@@ -19,11 +19,15 @@ public class Statistics {
     public Statistics(String flightCode){
         this.flightCode = flightCode;
         Lq = 0;
-        Ls = 0;
+        Ls = 1;
         L = 0;
         l = 0;
+        m = 0;
     }
     
+    public String getFlightCode(){
+        return flightCode;
+    }
     public void setLq(long Lq){
         this.Lq = Lq;
     }
@@ -36,6 +40,9 @@ public class Statistics {
     public void setL(long L){
         this.L = L;
     }
+    public void setM(long m){
+        this.m = m;
+    }
     public long getLq(){
         return Lq;
     }
@@ -47,5 +54,8 @@ public class Statistics {
     }
     public long getL(){
         return L;
+    }
+    public long getM(){
+        return m;
     }
 }
