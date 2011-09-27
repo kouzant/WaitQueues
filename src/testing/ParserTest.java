@@ -4,6 +4,7 @@
  */
 package testing;
 
+import business.Compute;
 import entities.Flights;
 import java.io.File;
 import java.util.Date;
@@ -35,8 +36,8 @@ public class ParserTest {
         flight=new Flights("EZY1236", "Athens", "London", departureDate, arrivalDate,
                 100, 50);
         Cache.addFlight(flight);
-
-
+        
+        InitFlights.initStats();
         BookParser bp = new BookParser(file1);
         bp.parseBooks();
     }

@@ -45,21 +45,51 @@ public class Compute {
         }
         
         stats.setLq(flight.getAwaiting().size());
-        Iterator<Bookings> bList = flight.getBookings().iterator();
-        Iterator<Bookings> wList = flight.getAwaiting().iterator();
+        LinkedList<Bookings> bList = flight.getBookings();
+        LinkedList<Bookings> wList = flight.getAwaiting();
+        Iterator<Bookings> bListIt = bList.iterator();
+        Iterator<Bookings> wListIt = wList.iterator();
        long totalServTime = 0L;
        int customers=0;
        
-       while(bList.hasNext()){
-           totalServTime = totalServTime+bList.next().getBookServTime();
+       while(bListIt.hasNext()){
+           totalServTime = totalServTime+bListIt.next().getBookServTime();
            customers++;
        }
-       while(wList.hasNext()){
-           totalServTime = totalServTime+wList.next().getBookServTime();
+       while(wListIt.hasNext()){
+           totalServTime = totalServTime+wListIt.next().getBookServTime();
            customers++;
        }
        long m = totalServTime/customers;
-       
+       System.err.println("m: "+m);
        stats.setM(m);
+       
+       int bSize = bList.size();
+       int wSize = wList.size();
+       long servTimeInter=0L;
+       
+        if (bSize == 1) {
+            servTimeInter = servTimeInter + bList.get(0).getBookServTime();
+        } else {
+            for (int i = 0; i < bSize; i++) {
+                long diff = bList.get(i + 1).getBookServTime()
+                        - bList.get(i).getBookServTime();
+                servTimeInter = servTimeInter + diff;
+            }
+        }
+        if (wSize == 1) {
+            servTimeInter = servTimeInter + wList.get(0).getBookServTime();
+        } else {
+            for (int i = 0; i < wSize; i++) {
+                long diff = wList.get(i + 1).getBookServTime()
+                        - wList.get(i).getBookServTime();
+                servTimeInter = servTimeInter + diff;
+            }
+        }
+       long meanServInter = servTimeInter / (bList.size() + wList.size());
+       //one hour is 3600000 ms
+       long l = 3600000 / meanServInter;
+       System.err.println("l/h: "+l);
+       stats.setl(l);
     }
 }

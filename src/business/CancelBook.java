@@ -16,6 +16,8 @@ public class CancelBook {
         this.bookID = bookID;
         this.flightCode = flightCode;
         delete();
+        Compute compute = new Compute();
+        compute.stabilize(flightCode);
     }
 
     private Flights getFlight() {

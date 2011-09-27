@@ -40,7 +40,8 @@ public class Booking {
             newCustomer.setBookWaitStart(timer.getTime());
             flight.getAwaiting().add(newCustomer);
         }
-        
+        Compute compute = new Compute();
+        compute.stabilize(flightCode);
         
     }
     public void printCustomers(){

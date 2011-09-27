@@ -2,8 +2,11 @@ package utilities;
 
 import java.util.GregorianCalendar;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.Iterator;
 
 import entities.Flights;
+import entities.Statistics;
 
 public class InitFlights {
     public InitFlights(){
@@ -68,5 +71,16 @@ public class InitFlights {
         newFlight = new Flights("EZY9234", "Thessaloniki", "Rhodes", depTime,
                 arrTime, 20, 18);
         Cache.addFlight(newFlight);        
+    }
+    
+    public static void initStats(){
+        LinkedList<Flights> flights = Cache.getFList();
+        LinkedList<Statistics> flightStats = Cache.getFlightStats();
+        Iterator<Flights> flightsIt = flights.iterator();
+        
+        while(flightsIt.hasNext()){
+            Statistics tmpStat = new Statistics(flightsIt.next().getFlightCode());
+            flightStats.add(tmpStat);
+        }
     }
 }
