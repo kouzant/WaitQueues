@@ -259,8 +259,8 @@ public class DisplayFlights extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(745, Short.MAX_VALUE)
                 .addComponent(jButton4)
@@ -341,6 +341,11 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void fligthReservation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fligthReservation
         // jButton3 handler:
+        String startpoint = (String)jComboBox3.getSelectedItem();
+        String endpoint = (String)jComboBox4.getSelectedItem();
+        String depDate = (String)jComboBox5.getSelectedItem();
+        String depHour = (String)jComboBox6.getSelectedItem();
+        
     }//GEN-LAST:event_fligthReservation
 
     private void flightCancellation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightCancellation
@@ -424,7 +429,6 @@ public class DisplayFlights extends javax.swing.JFrame {
         String case8[] = new String[] { "23:10" };
         javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
         String startpoint = (String)jComboBox3.getSelectedItem();
-        String endpoint = (String)jComboBox3.getSelectedItem();
         String depDate = (String)cb.getSelectedItem();
         if (depDate.equals("20/10/2011")) {
             if (startpoint.equals("Athens")) {
