@@ -36,7 +36,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPanel2" alignment="0" pref="835" max="32767" attributes="0"/>
+                          <Component id="jPanel2" alignment="0" pref="865" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
@@ -48,18 +48,12 @@
                                   <Component id="jTextField3" alignment="1" min="-2" pref="76" max="-2" attributes="1"/>
                                   <Component id="jTextField5" alignment="1" min="-2" pref="76" max="-2" attributes="1"/>
                               </Group>
-                              <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField4" max="32767" attributes="1"/>
-                                  <Component id="jTextField6" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jTextField7" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jTextField8" alignment="0" pref="132" max="32767" attributes="1"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                              <Component id="jTextField8" min="-2" pref="185" max="-2" attributes="1"/>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField9" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+                              <Component id="jTextField9" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -78,13 +72,25 @@
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField7" pref="185" max="32767" attributes="1"/>
+                                  <Component id="jTextField4" pref="185" max="32767" attributes="1"/>
+                                  <Component id="jTextField6" alignment="0" pref="185" max="32767" attributes="1"/>
+                              </Group>
                           </Group>
                       </Group>
+                      <EmptySpace pref="252" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -110,8 +116,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -525,11 +531,6 @@
         <BindingProperty name="editable" source="jRadioButton2" sourcePath="${selected}" target="jTextField8" targetPath="editable" updateStrategy="0" immediately="false"/>
       </BindingProperties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel17">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="-"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="jTextField9">
       <BindingProperties>
         <BindingProperty name="editable" source="jRadioButton2" sourcePath="${selected}" target="jTextField9" targetPath="editable" updateStrategy="0" immediately="false"/>
@@ -538,6 +539,11 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x391;&#x3ba;&#x3cd;&#x3c1;&#x3c9;&#x3c3;&#x3b7;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel17">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
     </Component>
   </SubComponents>
