@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 import business.Booking;
+import business.CancelBook;
 import java.util.Random;
 
 public class BookParser {
@@ -25,9 +26,11 @@ public class BookParser {
             while((newLine = breader.readLine()) != null){
                 String[] tokens = newLine.split("[-]");
                 long curTime = Timer.getTime();
+                System.err.println("curTime: "+curTime);
                 try{
                     Random random = new Random();
                     int sleepT = random.nextInt(10) + 5;
+                    System.err.println("Delay: "+sleepT);
                     TimeUnit.SECONDS.sleep(sleepT);
                 }catch(InterruptedException e){
                     e.printStackTrace();
@@ -38,6 +41,9 @@ public class BookParser {
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]),
                         delay);
             }
+            book.printCustomers();
+            new CancelBook("c7311", "EZY1234");
+            System.err.println("lala");
             book.printCustomers();
         }catch(FileNotFoundException e0){
             e0.printStackTrace();

@@ -7,6 +7,7 @@ import entities.Bookings;
 import entities.Flights;
 import utilities.Cache;
 import utilities.Timer;
+import utilities.Hash;
 
 public class Booking {
     private LinkedList<Bookings> customers;
@@ -25,9 +26,12 @@ public class Booking {
                 break;
             }
         }
+        Hash hash = new Hash();
+        String bookID = hash.MD5(id.concat(flightCode));
+        System.err.println("Book ID: "+bookID);
         Bookings newCustomer = new Bookings(id, passportID, firstName, lastName,
                                     phNumber, address, flightCode, cardSerial,
-                                    cardCode, delay);
+                                    cardCode, delay, bookID);
         if(flight.getAvailability()){
             flight.getBookings().add(newCustomer);
             flight.decrAvail();

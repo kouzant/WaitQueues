@@ -7,14 +7,15 @@ public class Timer {
     private static long startTime;
     
     public Timer(){
-        Calendar cal = Calendar.getInstance();
-        startTime = cal.getTime().getTime();
+        Date now = new Date();
+        startTime = now.getTime();
     }
     
     public static long getTime(){
-        Calendar cal = Calendar.getInstance();
-        long curTime = cal.getTime().getTime();
+        Date now = new Date();
+        long curTime = now.getTime();
+        long inter = curTime-startTime;
         
-        return curTime - startTime;
+        return inter;
     }
 }

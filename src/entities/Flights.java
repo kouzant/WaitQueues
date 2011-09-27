@@ -53,6 +53,9 @@ public class Flights {
     public LinkedList<Bookings> getAwaiting(){
         return awaiting;
     }
+    public int getAvailSeats(){
+        return availSeats;
+    }
     public void setFlightCode(String flightCode){
         this.flightCode = flightCode;
     }
