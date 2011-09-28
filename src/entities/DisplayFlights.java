@@ -8,8 +8,15 @@
  *
  * Created on Sep 2, 2011, 10:25:08 PM
  */
-
 package entities;
+
+import java.util.LinkedList;
+import java.util.Iterator;
+import java.util.GregorianCalendar;
+import java.util.Date;
+
+import utilities.Cache;
+
 /**
  *
  * @author christos
@@ -337,15 +344,46 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void displayData(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayData
         // jButton2 handler:
+        String startpoint = (String) jComboBox1.getSelectedItem();
+        String endpoint = (String) jComboBox2.getSelectedItem();
+        if (jRadioButton3.isSelected()) {
+            LinkedList<Flights> fList = Cache.getFList();
+            Iterator<Flights> fListIt = fList.iterator();
+        } else {
+            
+        }
     }//GEN-LAST:event_displayData
 
     private void fligthReservation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fligthReservation
         // jButton3 handler:
-        String startpoint = (String)jComboBox3.getSelectedItem();
-        String endpoint = (String)jComboBox4.getSelectedItem();
-        String depDate = (String)jComboBox5.getSelectedItem();
-        String depHour = (String)jComboBox6.getSelectedItem();
-        
+        String startpoint = (String) jComboBox3.getSelectedItem();
+        String endpoint = (String) jComboBox4.getSelectedItem();
+        String depDate = (String) jComboBox5.getSelectedItem();
+        String depHour = (String) jComboBox6.getSelectedItem();
+        String[] tmpDDate = depDate.split("[/]");
+        String[] tmpDHour = depHour.split("[:]");
+        Date departureTime = new GregorianCalendar(Integer.parseInt(tmpDDate[2]),
+                Integer.parseInt(tmpDDate[1]) - 1, Integer.parseInt(tmpDDate[0]),
+                Integer.parseInt(tmpDHour[0]), Integer.parseInt(tmpDHour[1])).getTime();
+
+        LinkedList<Flights> fList = Cache.getFList();
+        Iterator<Flights> fListIt = fList.iterator();
+        Flights indexF = null;
+        while (fListIt.hasNext()) {
+            Flights tmpFlight = fListIt.next();
+            if (tmpFlight.getDeparture().equals(startpoint)
+                    && tmpFlight.getArrival().equals(endpoint)
+                    && (tmpFlight.getDepTime().getTime() == departureTime.getTime())) {
+                indexF = tmpFlight;
+                break;
+            }
+        }
+
+        ReservationGUI newReservation = new ReservationGUI(indexF.getFlightCode(), indexF.getDeparture(),
+                indexF.getArrival(), indexF.getDepTime(),
+                indexF.getArrTime(), indexF.getTotalSeats(), indexF.getAvailSeats());
+        newReservation.setVisible(true);
+        super.setVisible(false);
     }//GEN-LAST:event_fligthReservation
 
     private void flightCancellation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightCancellation
@@ -358,31 +396,31 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[] { "Thessaloniki", "Rhodes" };
-        String case2[] = new String[] { "Athens", "Rhodes" };
-        String case3[] = new String[] { "Athens", "Thessaloniki" };
-        javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
-        String startpoint = (String)cb.getSelectedItem();
-        if (startpoint.equals("Athens")){
+        String case1[] = new String[]{"Thessaloniki", "Rhodes"};
+        String case2[] = new String[]{"Athens", "Rhodes"};
+        String case3[] = new String[]{"Athens", "Thessaloniki"};
+        javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
+        String startpoint = (String) cb.getSelectedItem();
+        if (startpoint.equals("Athens")) {
             jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(case1));
         } else if (startpoint.equals("Thessaloniki")) {
             jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(case2));
         } else if (startpoint.equals("Rhodes")) {
             jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(case3));
-        } 
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[] { "Thessaloniki", "Rhodes" };
-        String case2[] = new String[] { "Athens", "Rhodes" };
-        String case3[] = new String[] { "Athens", "Thessaloniki" };
-        String case4[] = new String[] { " "};
-        javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
+        String case1[] = new String[]{"Thessaloniki", "Rhodes"};
+        String case2[] = new String[]{"Athens", "Rhodes"};
+        String case3[] = new String[]{"Athens", "Thessaloniki"};
+        String case4[] = new String[]{" "};
+        javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(case4));
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case4));
-        String startpoint = (String)cb.getSelectedItem();
-        if (startpoint.equals("Athens")){
+        String startpoint = (String) cb.getSelectedItem();
+        if (startpoint.equals("Athens")) {
             jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(case1));
         } else if (startpoint.equals("Thessaloniki")) {
             jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(case2));
@@ -393,16 +431,16 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[] { "20/10/2011", "28/10/2011" };
-        String case2[] = new String[] { "22/10/2011", "30/10/2011" };
-        String case3[] = new String[] { "23/10/2011", "25/10/2011" };
-        String case4[] = new String[] { "26/10/2011" };
-        String case5[] = new String[] { "20/10/2011" };
-        String case6[] = new String[] { " "};
-        javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
+        String case1[] = new String[]{"20/10/2011", "28/10/2011"};
+        String case2[] = new String[]{"22/10/2011", "30/10/2011"};
+        String case3[] = new String[]{"23/10/2011", "25/10/2011"};
+        String case4[] = new String[]{"26/10/2011"};
+        String case5[] = new String[]{"20/10/2011"};
+        String case6[] = new String[]{" "};
+        javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case6));
-        String resultpoint = (String)cb.getSelectedItem();
-        if ( (resultpoint.equals("Athens")) && jComboBox3.getSelectedItem().equals("Thessaloniki")) {
+        String resultpoint = (String) cb.getSelectedItem();
+        if ((resultpoint.equals("Athens")) && jComboBox3.getSelectedItem().equals("Thessaloniki")) {
             jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(case2));
         } else if (resultpoint.equals("Thessaloniki") && jComboBox3.getSelectedItem().equals("Athens")) {
             jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(case1));
@@ -419,17 +457,17 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[] { "09:00" };
-        String case2[] = new String[] { "10:00" };
-        String case3[] = new String[] { "11:00" };
-        String case4[] = new String[] { "10:45" };
-        String case5[] = new String[] { "12:00" };
-        String case6[] = new String[] { "09:00", "13:00" };
-        String case7[] = new String[] { "21:00" };
-        String case8[] = new String[] { "23:10" };
-        javax.swing.JComboBox cb = (javax.swing.JComboBox)evt.getSource();
-        String startpoint = (String)jComboBox3.getSelectedItem();
-        String depDate = (String)cb.getSelectedItem();
+        String case1[] = new String[]{"09:00"};
+        String case2[] = new String[]{"10:00"};
+        String case3[] = new String[]{"11:00"};
+        String case4[] = new String[]{"10:45"};
+        String case5[] = new String[]{"12:00"};
+        String case6[] = new String[]{"09:00", "13:00"};
+        String case7[] = new String[]{"21:00"};
+        String case8[] = new String[]{"23:10"};
+        javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
+        String startpoint = (String) jComboBox3.getSelectedItem();
+        String depDate = (String) cb.getSelectedItem();
         if (depDate.equals("20/10/2011")) {
             if (startpoint.equals("Athens")) {
                 jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case1));
@@ -452,8 +490,6 @@ public class DisplayFlights extends javax.swing.JFrame {
             jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case8));
         }
     }//GEN-LAST:event_jComboBox5ActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -487,5 +523,4 @@ public class DisplayFlights extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-
 }
