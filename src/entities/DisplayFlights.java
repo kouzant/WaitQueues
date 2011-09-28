@@ -348,9 +348,20 @@ public class DisplayFlights extends javax.swing.JFrame {
         String endpoint = (String) jComboBox2.getSelectedItem();
         if (jRadioButton3.isSelected()) {
             LinkedList<Flights> fList = Cache.getFList();
+            LinkedList<Flights> fPList = new LinkedList();
             Iterator<Flights> fListIt = fList.iterator();
-        } else {
             
+            while (fListIt.hasNext()) {
+                Flights tmpFlight = fListIt.next();
+                if (tmpFlight.getDeparture().equals(startpoint)
+                        && tmpFlight.getArrival().equals(endpoint)) {
+                    fPList.add(tmpFlight);
+                }
+            }
+            PrintFlightData newPrintFlightData = new PrintFlightData();
+            newPrintFlightData.dispData(fPList);
+            newPrintFlightData.setVisible(true);
+        } else {
         }
     }//GEN-LAST:event_displayData
 
