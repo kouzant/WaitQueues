@@ -53,6 +53,9 @@ public class Flights {
     public LinkedList<Bookings> getAwaiting(){
         return awaiting;
     }
+    public int getTotalSeats(){
+        return totalSeats;
+    }
     public int getAvailSeats(){
         return availSeats;
     }
