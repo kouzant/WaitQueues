@@ -1,8 +1,6 @@
 package charts;
 
 import entities.Statistics;
-import java.text.DecimalFormat;
-import java.util.HashMap;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -19,10 +17,10 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class BarChart extends JFrame{
+public class BarChartL extends JFrame{
     LinkedList<Statistics> stats;
     
-    public BarChart(String appTitle, String chartTitle, 
+    public BarChartL(String appTitle, String chartTitle, 
             LinkedList<Statistics> stats){
         super(appTitle);
         this.stats = stats;
