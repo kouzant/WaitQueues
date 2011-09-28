@@ -354,8 +354,8 @@ public class ReservationGUI extends javax.swing.JFrame {
     private void doReservation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doReservation
         //if (jRadioButton1.isEnabled()) // jTextPane1 contents
         ConfigParser cp = new ConfigParser();
-        String file1 = cp.getFile("file1");
-        BookParser bookParser = new BookParser(file1);
+        String parseFile = cp.getFile(jTextField10.getText());
+        BookParser bookParser = new BookParser(parseFile);
         if (jRadioButton1.isSelected()) {
             bookParser.parseBooks();
         } else {

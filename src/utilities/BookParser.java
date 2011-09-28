@@ -60,7 +60,7 @@ public class BookParser {
                     Random random = new Random();
                     sleepT = random.nextInt(10) + 3;
                     System.err.println("Delay: " + 2);
-                    TimeUnit.SECONDS.sleep(sleepT);
+                    TimeUnit.SECONDS.sleep(2);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
