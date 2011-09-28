@@ -36,7 +36,7 @@ public class BookParser {
         book.book(identity, passport, name, surname,
                 Long.valueOf(tel), Address, fCode,
                 Long.valueOf(cardNum), Integer.parseInt(cardCode),
-                delay);
+                delay, curTime);
     }
 
     public void parseBooks() {
@@ -66,7 +66,7 @@ public class BookParser {
                 book.book(tokens[0], tokens[1], tokens[2], tokens[3],
                         Long.valueOf(tokens[4]), tokens[5], tokens[6],
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]),
-                        delay);
+                        delay, curTime);
             }
             book.printCustomers();
             //new CancelBook("c7311", "EZY1234");

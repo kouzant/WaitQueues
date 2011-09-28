@@ -147,17 +147,17 @@ public class Compute {
             servTimeInter = servTimeInter + timer.getTime();
         } else {
             for (int i = 0; i < (bSize-1); i++) {
-                long diff = bList.get(i + 1).getBookServTime()
-                        - bList.get(i).getBookServTime();
+                long diff = bList.get(i + 1).getArrTime()
+                        - bList.get(i).getArrTime();
                 servTimeInter = servTimeInter + diff;
             }
         }
         if (wSize == 1) {
-            servTimeInter = servTimeInter + wList.get(0).getBookServTime();
+            servTimeInter = servTimeInter + timer.getTime();
         } else if (wSize > 1){
             for (int i = 0; i < (wSize-1); i++) {
-                long diff = wList.get(i + 1).getBookServTime()
-                        - wList.get(i).getBookServTime();
+                long diff = wList.get(i + 1).getArrTime()
+                        - wList.get(i).getArrTime();
                 servTimeInter = servTimeInter + diff;
             }
         }

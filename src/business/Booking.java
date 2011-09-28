@@ -15,7 +15,7 @@ public class Booking {
 
     public void book(String id, String passportID, String firstName,
             String lastName, long phNumber, String address, String flightCode,
-            long cardSerial, int cardCode, long delay) {
+            long cardSerial, int cardCode, long delay, long curTime) {
         LinkedList<Flights> flights = Cache.getFList();
         Iterator<Flights> FList = flights.iterator();
         Flights tmpFlight = null;
@@ -33,6 +33,7 @@ public class Booking {
         Bookings newCustomer = new Bookings(id, passportID, firstName, lastName,
                 phNumber, address, flightCode, cardSerial,
                 cardCode, delay, bookID);
+        newCustomer.setArrTime(curTime);
         if (flight.getAvailability()) {
             flight.getBookings().add(newCustomer);
             flight.decrAvail();
