@@ -166,6 +166,7 @@ public class Compute {
        long l = 3600000 / meanServInter;
        System.err.println("l/h: "+l);
        stats.setl(l);
+       
        Long ll = new Long(l);
        Long ml = new Long(m);
        float lf = ll.floatValue();
@@ -173,6 +174,9 @@ public class Compute {
        float r = lf/mf;
        DecimalFormat df = new DecimalFormat("#.###");
        stats.setR(df.format(r));
+       
+       float w = 1 / (mf - lf);
+       stats.setW(df.format(w));
     }
     
     public void printStats(){

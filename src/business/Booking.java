@@ -49,7 +49,6 @@ public class Booking {
         //compute.computeM(flightCode);
         //compute.computel(flightCode);
         compute.update(flightCode);
-
     }
 
     public void printCustomers() {
