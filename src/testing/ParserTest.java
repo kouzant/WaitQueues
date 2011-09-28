@@ -26,7 +26,7 @@ public class ParserTest {
         //Create the flights
         Date departureDate = new GregorianCalendar(2011,04,15,18,15).getTime();
         Date arrivalDate = new GregorianCalendar(2011,04,15,21,00).getTime();
-        Flights flight=new Flights("EZY1234", "Athens", "London", departureDate, arrivalDate,
+        Flights flight=new Flights("EZY2234", "Athens", "London", departureDate, arrivalDate,
                 100, 1);
         Cache.addFlight(flight);
         flight=new Flights("EZY1235", "Athens", "London", departureDate, arrivalDate,

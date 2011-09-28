@@ -191,10 +191,6 @@ public class DisplayFlights extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(733, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,6 +214,10 @@ public class DisplayFlights extends javax.swing.JFrame {
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(368, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(733, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,9 +236,9 @@ public class DisplayFlights extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap())
+                .addGap(6, 6, 6))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ακύρωση Κράτησης", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 0, 51))); // NOI18N
@@ -477,7 +477,7 @@ public class DisplayFlights extends javax.swing.JFrame {
         String case3[] = new String[]{"11:00"};
         String case4[] = new String[]{"10:45"};
         String case5[] = new String[]{"12:00"};
-        String case6[] = new String[]{"09:00", "13:00"};
+        String case6[] = new String[]{"09:00", "15:00"};
         String case7[] = new String[]{"21:00"};
         String case8[] = new String[]{"23:10"};
         javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
@@ -487,9 +487,9 @@ public class DisplayFlights extends javax.swing.JFrame {
             if (startpoint.equals("Athens")) {
                 jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case1));
             } else if (startpoint.equals("Thessaloniki")) {
-                jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case2));
-            } else {
                 jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case3));
+            } else {
+                jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case2));
             }
         } else if (depDate.equals("22/10/2011")) {
             jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case4));

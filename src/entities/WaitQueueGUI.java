@@ -8,8 +8,14 @@
  *
  * Created on Sep 26, 2011, 4:09:05 PM
  */
-
 package entities;
+
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+import utilities.Timer;
+import utilities.Cache;
+import utilities.InitFlights;
 
 /**
  *
@@ -308,7 +314,8 @@ public class WaitQueueGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // call timer...
+        Timer timer = new Timer();
+        timer.setTimer();
         super.setVisible(false);
         new utilities.InitFlights();
         new utilities.Timer();
@@ -322,17 +329,21 @@ public class WaitQueueGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
+        //Create the flights
+        new InitFlights();
+
+        InitFlights.initStats();
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 WaitQueueGUI newWaitQueueGUI = new WaitQueueGUI();
                 newWaitQueueGUI.setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -366,5 +377,4 @@ public class WaitQueueGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
-
 }
