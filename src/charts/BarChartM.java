@@ -37,14 +37,15 @@ public class BarChartM extends JFrame{
         Statistics inStat = null;
         while(statIt.hasNext()){
             inStat = statIt.next();
-            dataset.addValue(inStat.getM(), new Integer(1),
+            dataset.addValue(inStat.getM(), "μ",
                     inStat.getFlightCode());
         }
         return dataset;
     }
         private JFreeChart createChart(CategoryDataset dataset, String chartTitle){
-            JFreeChart chart = ChartFactory.createBarChart3D(chartTitle, "lala",
-                    "M", dataset, PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart chart = ChartFactory.createBarChart3D(chartTitle, "Μέσος "
+                    + "ρυθμός στη φάση της εξυπηρέτησης (μ)",
+                    "milliseconds", dataset, PlotOrientation.VERTICAL, true, true, false);
             CategoryPlot plot = (CategoryPlot) chart.getPlot();
             plot.setForegroundAlpha(0.6f);
             NumberAxis3D axisRange = (NumberAxis3D) plot.getRangeAxis();

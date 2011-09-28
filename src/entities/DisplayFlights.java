@@ -415,14 +415,16 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void stopSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulation
         // jButton1 handler:
-        BarChartL barChartL = new BarChartL("lala", "L", Cache.getFlightStats());
+        BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
+                + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
         barChartL.pack();
-        barChartL.setLocation(640, 100);
+        barChartL.setLocation(640, 50);
         barChartL.setVisible(true);
         
-        BarChartM barChartM = new BarChartM("lala", "M", Cache.getFlightStats());
+        BarChartM barChartM = new BarChartM("Προσομοίωση κράτησης αεροπορικών"
+                + " εισητηρίων", "Μέσος ρυθμός στη φάση της εξυπηρέτησης (μ)", Cache.getFlightStats());
         barChartM.pack();
-        barChartM.setLocation(20, 100);
+        barChartM.setLocation(20, 50);
         barChartM.setVisible(true);
     }//GEN-LAST:event_stopSimulation
 
