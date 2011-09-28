@@ -35,13 +35,18 @@ public class Booking {
         if(flight.getAvailability()){
             flight.getBookings().add(newCustomer);
             flight.decrAvail();
+            flight.incrNBookList();
         }else{
             Timer timer = new Timer();
             newCustomer.setBookWaitStart(timer.getTime());
             flight.getAwaiting().add(newCustomer);
+            flight.incrNWaitList();
         }
+        Cache.addCustomer(newCustomer);
         Compute compute = new Compute();
-        compute.stabilize(flightCode);
+        //compute.computeM(flightCode);
+        //compute.computel(flightCode);
+        compute.update(flightCode);
         
     }
     public void printCustomers(){

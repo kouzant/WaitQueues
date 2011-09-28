@@ -7,7 +7,7 @@ public class Statistics {
     private long l;
     private long m;
     
-    private long r;
+    private String r;
     //mesos xronos anamonhs
     private long Wq;
     private long Ws;
@@ -43,6 +43,9 @@ public class Statistics {
     public void setM(long m){
         this.m = m;
     }
+    public void setR(String r){
+        this.r = r;
+    }
     public long getLq(){
         return Lq;
     }
@@ -57,5 +60,16 @@ public class Statistics {
     }
     public long getM(){
         return m;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Flight Code: "+flightCode).append("\n");
+        sb.append("l: "+l).append("\n");
+        sb.append("m: "+m).append("\n");
+        sb.append("r: "+r).append("\n");
+        
+        return sb.toString();
     }
 }

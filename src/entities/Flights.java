@@ -10,7 +10,11 @@ public class Flights {
     private Date depTime;
     private Date arrTime;
     private int totalSeats;
-    private int availSeats; // 
+    private int availSeats;
+    //Total number of entries in boarding and waiting
+    //list without cancels
+    private int nBookList;
+    private int nWaitList;
     private LinkedList<Bookings> bookings;
     private LinkedList<Bookings> awaiting;
 
@@ -25,6 +29,8 @@ public class Flights {
         this.availSeats = availSeats;
         this.bookings = new LinkedList<Bookings>();
         this.awaiting = new LinkedList<Bookings>();
+        this.nBookList = 0;
+        this.nWaitList = 0;
     }
     public String getFlightCode(){
         return flightCode;
@@ -59,6 +65,12 @@ public class Flights {
     public int getAvailSeats(){
         return availSeats;
     }
+    public int getNBookList(){
+        return nBookList;
+    }
+    public int getNWaitList(){
+        return nWaitList;
+    }
     public void setFlightCode(String flightCode){
         this.flightCode = flightCode;
     }
@@ -82,6 +94,12 @@ public class Flights {
     }
     public void decrAvail(){
         availSeats--;
+    }
+    public void incrNBookList(){
+        nBookList++;
+    }
+    public void incrNWaitList(){
+        nWaitList++;
     }
     @Override
     public String toString(){
