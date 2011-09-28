@@ -8,6 +8,7 @@ import entities.Flights;
 import entities.Statistics;
 import entities.Bookings;
 import java.text.DecimalFormat;
+import utilities.Timer;
 
 public class Compute {
     private LinkedList<Bookings> customers;
@@ -139,11 +140,11 @@ public class Compute {
        int bSize = bList.size();
        int wSize = wList.size();
        long servTimeInter=0L;
-
+       Timer timer = new Timer();
        if(bSize == 0)
            servTimeInter = 0;
         else if(bSize == 1) {
-            servTimeInter = servTimeInter + bList.get(0).getBookServTime();
+            servTimeInter = servTimeInter + timer.getTime();
         } else {
             for (int i = 0; i < (bSize-1); i++) {
                 long diff = bList.get(i + 1).getBookServTime()
