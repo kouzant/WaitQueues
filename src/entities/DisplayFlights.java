@@ -344,6 +344,14 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void displayData(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayData
         // jButton2 handler:
+        String startpoint = (String) jComboBox1.getSelectedItem();
+        String endpoint = (String) jComboBox2.getSelectedItem();
+        if (jRadioButton3.isSelected()) {
+            LinkedList<Flights> fList = Cache.getFList();
+            Iterator<Flights> fListIt = fList.iterator();
+        } else {
+            
+        }
     }//GEN-LAST:event_displayData
 
     private void fligthReservation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fligthReservation
@@ -363,17 +371,17 @@ public class DisplayFlights extends javax.swing.JFrame {
         Flights indexF = null;
         while (fListIt.hasNext()) {
             Flights tmpFlight = fListIt.next();
-            if ( tmpFlight.getDeparture().equals(startpoint)
+            if (tmpFlight.getDeparture().equals(startpoint)
                     && tmpFlight.getArrival().equals(endpoint)
-                    && ( tmpFlight.getDepTime().getTime() == departureTime.getTime() ) ) {
+                    && (tmpFlight.getDepTime().getTime() == departureTime.getTime())) {
                 indexF = tmpFlight;
                 break;
             }
         }
 
         ReservationGUI newReservation = new ReservationGUI(indexF.getFlightCode(), indexF.getDeparture(),
-            indexF.getArrival(), indexF.getDepTime(),
-            indexF.getArrTime(), indexF.getTotalSeats(), indexF.getAvailSeats());
+                indexF.getArrival(), indexF.getDepTime(),
+                indexF.getArrTime(), indexF.getTotalSeats(), indexF.getAvailSeats());
         newReservation.setVisible(true);
         super.setVisible(false);
     }//GEN-LAST:event_fligthReservation
