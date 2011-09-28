@@ -384,6 +384,9 @@ public class ReservationGUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        super.setVisible(false);
+        DisplayFlights newDisplayFlights = new DisplayFlights();
+        newDisplayFlights.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
