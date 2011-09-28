@@ -25,7 +25,7 @@ public class ReservationGUI extends javax.swing.JFrame {
             String arrival, Date depTime,
             Date arrTime, int totalSeats, int availSeats) {
         initComponents();
-        
+
         jTextField10.setText(fCode);
         jTextField11.setText(departure);
         jTextField12.setText(arrival);
@@ -359,11 +359,15 @@ public class ReservationGUI extends javax.swing.JFrame {
         if (jRadioButton1.isSelected()) {
             bookParser.parseBooks();
         } else {
-            bookParser.parseBook(jTextField2.getText(), jTextField6.getText(),
+            String bookID = bookParser.parseBook(jTextField2.getText(), jTextField6.getText(),
                     jTextField1.getText(), jTextField4.getText(),
                     jTextField3.getText(), jTextField7.getText(),
                     jTextField10.getText(), jTextField8.getText(),
                     jTextField9.getText());
+            super.setVisible(false);
+            ReservationSuccessful reservSuccess = new ReservationSuccessful();
+            reservSuccess.setVisible(true);
+            reservSuccess.printReservCode(bookID);
         }
     }//GEN-LAST:event_doReservation
 
@@ -373,7 +377,6 @@ public class ReservationGUI extends javax.swing.JFrame {
         DisplayFlights newDisplayFlights = new DisplayFlights();
         newDisplayFlights.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
