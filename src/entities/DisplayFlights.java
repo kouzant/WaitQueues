@@ -346,10 +346,11 @@ public class DisplayFlights extends javax.swing.JFrame {
         // jButton2 handler:
         String startpoint = (String) jComboBox1.getSelectedItem();
         String endpoint = (String) jComboBox2.getSelectedItem();
+        LinkedList<Flights> fList = Cache.getFList();
+        Iterator<Flights> fListIt = fList.iterator();
+
         if (jRadioButton3.isSelected()) {
-            LinkedList<Flights> fList = Cache.getFList();
             LinkedList<Flights> fPList = new LinkedList();
-            Iterator<Flights> fListIt = fList.iterator();
             
             while (fListIt.hasNext()) {
                 Flights tmpFlight = fListIt.next();
@@ -362,6 +363,9 @@ public class DisplayFlights extends javax.swing.JFrame {
             newPrintFlightData.dispData(fPList);
             newPrintFlightData.setVisible(true);
         } else {
+            PrintFlightData newPrintFlightData = new PrintFlightData();
+            newPrintFlightData.dispData(fList);
+            newPrintFlightData.setVisible(true);
         }
     }//GEN-LAST:event_displayData
 
