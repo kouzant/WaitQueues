@@ -2,17 +2,23 @@ package utilities;
 
 import java.util.LinkedList;
 
+import entities.Bookings;
 import entities.Flights;
 import entities.Statistics;
 
 public class Cache {
     private static LinkedList<Flights> flights;
     private static LinkedList<Statistics> flightStats;
+    private static LinkedList<Bookings> customers;
     private static long startTime=0L;
    
     public Cache(){
         flights = new LinkedList<Flights>();
         flightStats = new LinkedList<Statistics>();
+        customers = new LinkedList<Bookings>();
+    }
+    public static void addCustomer(Bookings bookings){
+        customers.add(bookings);
     }
     public static void addFlight(Flights flight){
         flights.add(flight);
@@ -31,5 +37,8 @@ public class Cache {
     }
     public static LinkedList<Statistics> getFlightStats(){
         return flightStats;
+    }
+    public static LinkedList<Bookings> getCustomers(){
+        return customers;
     }
 }

@@ -7,20 +7,91 @@ import utilities.Cache;
 import entities.Flights;
 import entities.Statistics;
 import entities.Bookings;
+import java.text.DecimalFormat;
 
 public class Compute {
-    public void init(){
-        LinkedList<Flights> flights = Cache.getFList();
-        LinkedList<Statistics> flightStats = Cache.getFlightStats();
-        Iterator<Flights> flightsIt = flights.iterator();
-        
-        while(flightsIt.hasNext()){
-            Statistics tmpStat = new Statistics(flightsIt.next().getFlightCode());
-            flightStats.add(tmpStat);
-        }
+    private LinkedList<Bookings> customers;
+    private LinkedList<Statistics> stats;
+    
+    public Compute(){
+        customers = Cache.getCustomers();
+        stats = Cache.getFlightStats();
     }
     
-    public void stabilize(String flightCode){
+    public void computeM(String flightCode){
+        Iterator<Bookings> custIt = customers.iterator();
+        int nCust = 0;
+        long totalServTime = 0L;
+        long m = 0L;
+        
+        while(custIt.hasNext()){
+            Bookings customer = custIt.next();
+            if(customer.getFlightCode().equals(flightCode)){
+                totalServTime = totalServTime + customer.getBookServTime();
+                nCust++;
+            }
+        }
+        
+        m = totalServTime / nCust;
+        
+        Statistics stat = getFStat(flightCode);
+        stat.setM(m);
+        System.out.println("m: "+m);
+    }
+    
+    public void computel(String flightCode){
+        System.out.println(flightCode);
+        Iterator<Bookings> custIt = customers.iterator();
+        LinkedList<Long> servTimes = new LinkedList<Long>();
+        long servTimeInter = 0L;
+        int nCust = 0;
+        long meanServTimeInter = 0;
+        
+        while(custIt.hasNext()){
+            Bookings cust = custIt.next();
+            if(cust.getFlightCode().equals(flightCode)){
+                servTimes.add(cust.getBookServTime());
+                nCust++;
+            }
+        }
+        
+        if(servTimes.size() == 1){
+            servTimeInter = servTimeInter + servTimes.get(0);
+        }else if (servTimes.size() == 0){
+            System.out.println("No customers");
+            nCust = 1;
+            meanServTimeInter = 1;
+        }else {
+            System.err.println("skjhf: "+servTimes.size());
+            for(int i=0;i<(servTimes.size()-1);i++){
+                long diff = servTimes.get(i+1) - servTimes.get(i);
+                servTimeInter = servTimeInter + diff;
+            }
+        }
+        
+        meanServTimeInter = servTimeInter / nCust;
+        //one hour is 3600000 ms
+        long l = 3600000 / meanServTimeInter;
+       
+       Statistics stat = getFStat(flightCode);
+       stat.setl(l);
+       System.err.println("l/h: "+l);
+    }
+    
+    private Statistics getFStat(String flightCode){
+        Iterator<Statistics> statsIt = stats.iterator();
+        Statistics stat = null;
+        while(statsIt.hasNext()){
+            stat = statsIt.next();
+            if(stat.getFlightCode().equals(flightCode))
+                break;
+            else
+                stat = null;
+        }
+        
+        return stat;
+    }
+    public void update(String flightCode){
         LinkedList<Flights> flights = Cache.getFList();
         Iterator<Flights> flightsIt = flights.iterator();
         LinkedList<Statistics> fStats = Cache.getFlightStats();
@@ -45,6 +116,7 @@ public class Compute {
         }
         
         stats.setLq(flight.getAwaiting().size());
+        stats.setLs(flight.getBookings().size());
         LinkedList<Bookings> bList = flight.getBookings();
         LinkedList<Bookings> wList = flight.getAwaiting();
         Iterator<Bookings> bListIt = bList.iterator();
@@ -91,5 +163,19 @@ public class Compute {
        long l = 3600000 / meanServInter;
        System.err.println("l/h: "+l);
        stats.setl(l);
+       Long ll = new Long(l);
+       Long ml = new Long(m);
+       float lf = ll.floatValue();
+       float mf = ml.floatValue();
+       float r = lf/mf;
+       stats.setR(r);
+    }
+    
+    public void printStats(){
+        LinkedList<Statistics> stats = Cache.getFlightStats();
+        Iterator<Statistics> statsIt = stats.iterator();
+        while(statsIt.hasNext()){
+            System.out.println(statsIt.next());
+        }
     }
 }

@@ -40,5 +40,6 @@ public class ParserTest {
         InitFlights.initStats();
         BookParser bp = new BookParser(file1);
         bp.parseBooks();
+        
     }
 }

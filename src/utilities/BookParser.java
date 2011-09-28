@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import business.Booking;
 import business.CancelBook;
+import business.Compute;
 import java.util.Random;
 
 public class BookParser {
@@ -20,6 +21,8 @@ public class BookParser {
             FileInputStream fiStream = new FileInputStream(fileName);
             DataInputStream diStream = new DataInputStream(fiStream);
             Booking book = new Booking();
+            Compute compute = new Compute();
+            
             BufferedReader breader = new BufferedReader(
                     new InputStreamReader(diStream));
             
@@ -44,9 +47,10 @@ public class BookParser {
                         delay);
             }
             book.printCustomers();
-            new CancelBook("c7311", "EZY1234");
+            //new CancelBook("c7311", "EZY1234");
             System.err.println("lala");
             book.printCustomers();
+            compute.printStats();
         }catch(FileNotFoundException e0){
             e0.printStackTrace();
         }catch(IOException e1){

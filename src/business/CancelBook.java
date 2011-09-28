@@ -16,8 +16,6 @@ public class CancelBook {
         this.bookID = bookID;
         this.flightCode = flightCode;
         delete();
-        Compute compute = new Compute();
-        compute.stabilize(flightCode);
     }
 
     private Flights getFlight() {
@@ -57,7 +55,7 @@ public class CancelBook {
             if (flight.getAwaiting().size() > 0) {
                 Bookings luckyCust = flight.getAwaiting().removeFirst();
                 //add 5 sec delay to the existing service time
-                luckyCust.setBookServTime(luckyCust.getBookServTime() + 5);
+                luckyCust.setBookServTime(luckyCust.getBookServTime() + 5000);
                 custLists.add(luckyCust);
             } else {
                 flight.setAvailSeats(flight.getAvailSeats() + 1);
