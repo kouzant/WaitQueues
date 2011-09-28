@@ -318,7 +318,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
         timer.setTimer();
         super.setVisible(false);
         new utilities.InitFlights();
-        new utilities.Timer();
+        InitFlights.initStats();
         DisplayFlights newDisplayFlights = new DisplayFlights();
         newDisplayFlights.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -333,11 +333,8 @@ public class WaitQueueGUI extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         //Create the flights
-        new InitFlights();
 
-        InitFlights.initStats();
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 WaitQueueGUI newWaitQueueGUI = new WaitQueueGUI();
                 newWaitQueueGUI.setVisible(true);

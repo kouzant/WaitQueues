@@ -139,11 +139,13 @@ public class Compute {
        int bSize = bList.size();
        int wSize = wList.size();
        long servTimeInter=0L;
-       
-        if (bSize == 1) {
+
+       if(bSize == 0)
+           servTimeInter = 0;
+        else if(bSize == 1) {
             servTimeInter = servTimeInter + bList.get(0).getBookServTime();
         } else {
-            for (int i = 0; i < bSize; i++) {
+            for (int i = 0; i < (bSize-1); i++) {
                 long diff = bList.get(i + 1).getBookServTime()
                         - bList.get(i).getBookServTime();
                 servTimeInter = servTimeInter + diff;
@@ -151,8 +153,8 @@ public class Compute {
         }
         if (wSize == 1) {
             servTimeInter = servTimeInter + wList.get(0).getBookServTime();
-        } else {
-            for (int i = 0; i < wSize; i++) {
+        } else if (wSize > 1){
+            for (int i = 0; i < (wSize-1); i++) {
                 long diff = wList.get(i + 1).getBookServTime()
                         - wList.get(i).getBookServTime();
                 servTimeInter = servTimeInter + diff;

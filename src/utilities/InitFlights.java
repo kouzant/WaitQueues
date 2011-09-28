@@ -31,7 +31,7 @@ public class InitFlights {
         Cache.addFlight(newFlight);
         
         depTime = new GregorianCalendar(2011,9,30,23,10).getTime();
-        arrTime = new GregorianCalendar(2011,9,30,2,10).getTime();
+        arrTime = new GregorianCalendar(2011,9,30,23,50).getTime();
         newFlight = new Flights("EZY4234", "Thessaloniki", "Athens", depTime,
                 arrTime, 20, 5);
         Cache.addFlight(newFlight);
