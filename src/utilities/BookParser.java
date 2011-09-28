@@ -23,15 +23,17 @@ public class BookParser {
             String fCode, String cardNum, String cardCode) {
 
         long curTime = timer.getTime();
+        int sleepT = 1;
         try {
             Random random = new Random();
-            int sleepT = random.nextInt(10) + 5;
+            sleepT = random.nextInt(10) + 3;
             System.err.println("Delay: " + sleepT);
-            TimeUnit.SECONDS.sleep(sleepT);
+            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        long after = timer.getTime();
+        long vDelay = 2000 + sleepT*1000;
+        long after = timer.getTime() + vDelay;
         long delay = after - curTime;
         book.book(identity, passport, name, surname,
                 Long.valueOf(tel), Address, fCode,
@@ -49,19 +51,21 @@ public class BookParser {
                     new InputStreamReader(diStream));
 
             String newLine;
+            int sleepT = 1;
             while ((newLine = breader.readLine()) != null) {
                 String[] tokens = newLine.split("[-]");
                 long curTime = timer.getTime();
                 System.err.println("curTime: " + curTime);
                 try {
                     Random random = new Random();
-                    int sleepT = random.nextInt(10) + 5;
-                    System.err.println("Delay: " + sleepT);
-                    TimeUnit.SECONDS.sleep(sleepT);
+                    sleepT = random.nextInt(10) + 3;
+                    System.err.println("Delay: " + 2);
+                    TimeUnit.SECONDS.sleep(2);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                long after = timer.getTime();
+                long vDelay = 2000 + sleepT*1000;
+                long after = timer.getTime() + vDelay;
                 long delay = after - curTime;
                 book.book(tokens[0], tokens[1], tokens[2], tokens[3],
                         Long.valueOf(tokens[4]), tokens[5], tokens[6],
