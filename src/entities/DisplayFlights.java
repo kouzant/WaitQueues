@@ -17,6 +17,7 @@ import java.util.GregorianCalendar;
 import java.util.Date;
 
 import utilities.Cache;
+import charts.BarChart;
 
 /**
  *
@@ -414,6 +415,10 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void stopSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulation
         // jButton1 handler:
+        BarChart barChart = new BarChart("lala", "L", Cache.getFlightStats());
+        barChart.pack();
+        barChart.setLocation(640, 100);
+        barChart.setVisible(true);
     }//GEN-LAST:event_stopSimulation
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
