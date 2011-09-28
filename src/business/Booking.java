@@ -13,7 +13,7 @@ public class Booking {
 
     private LinkedList<Bookings> customers;
 
-    public void book(String id, String passportID, String firstName,
+    public String book(String id, String passportID, String firstName,
             String lastName, long phNumber, String address, String flightCode,
             long cardSerial, int cardCode, long delay, long curTime) {
         LinkedList<Flights> flights = Cache.getFList();
@@ -49,6 +49,7 @@ public class Booking {
         //compute.computeM(flightCode);
         //compute.computel(flightCode);
         compute.update(flightCode);
+        return bookID;
     }
 
     public void printCustomers() {

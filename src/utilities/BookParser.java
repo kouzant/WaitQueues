@@ -18,10 +18,11 @@ public class BookParser {
     Timer timer = new Timer();
     Booking book = new Booking();
 
-    public void parseBook(String identity, String passport,
+    public String parseBook(String identity, String passport,
             String name, String surname, String tel, String Address,
             String fCode, String cardNum, String cardCode) {
 
+        String bookID;
         long curTime = timer.getTime();
         int sleepT = 1;
         try {
@@ -35,10 +36,11 @@ public class BookParser {
         long vDelay = 2000 + sleepT*1000;
         long after = timer.getTime() + vDelay;
         long delay = after - curTime;
-        book.book(identity, passport, name, surname,
+        bookID = book.book(identity, passport, name, surname,
                 Long.valueOf(tel), Address, fCode,
                 Long.valueOf(cardNum), Integer.parseInt(cardCode),
                 delay, curTime);
+        return bookID;
     }
 
     public void parseBooks() {
