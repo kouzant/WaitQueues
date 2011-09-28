@@ -375,6 +375,7 @@ public class DisplayFlights extends javax.swing.JFrame {
             indexF.getArrival(), indexF.getDepTime(),
             indexF.getArrTime(), indexF.getTotalSeats(), indexF.getAvailSeats());
         newReservation.setVisible(true);
+        super.setVisible(false);
     }//GEN-LAST:event_fligthReservation
 
     private void flightCancellation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightCancellation
