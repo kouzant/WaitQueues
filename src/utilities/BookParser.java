@@ -73,7 +73,7 @@ public class BookParser {
                         delay, curTime);
             }
             book.printCustomers();
-            //new CancelBook("c7311", "EZY1234");
+            //new CancelBook("fa283", "EZY2234");
             System.err.println("lala");
             book.printCustomers();
             compute.printStats();

@@ -10,6 +10,7 @@
  */
 package entities;
 
+import business.CancelBook;
 import java.util.LinkedList;
 import java.util.Iterator;
 import java.util.GregorianCalendar;
@@ -403,6 +404,12 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void flightCancellation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightCancellation
         // jButton4 handler:
+        String flightCode = jTextField1.getText().toUpperCase();
+        String bookID = jTextField2.getText();
+        
+        new CancelBook(bookID, flightCode);
+        new Deleted().setVisible(true);
+        
     }//GEN-LAST:event_flightCancellation
 
     private void stopSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulation
