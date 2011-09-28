@@ -27,7 +27,7 @@ public class InitFlights {
         depTime = new GregorianCalendar(2011,9,22,10,45).getTime();
         arrTime = new GregorianCalendar(2011,9,22,13,45).getTime();
         newFlight = new Flights("EZY3234", "Thessaloniki", "Athens", 
-                depTime, arrTime, 20, 10);
+                depTime, arrTime, 20, 7);
         Cache.addFlight(newFlight);
         
         depTime = new GregorianCalendar(2011,9,30,23,10).getTime();
@@ -39,7 +39,7 @@ public class InitFlights {
         depTime = new GregorianCalendar(2011,9,23,10,00).getTime();
         arrTime = new GregorianCalendar(2011,9,23,13,00).getTime();
         newFlight = new Flights("EZY5234", "Athens", "Rhodes", depTime, arrTime,
-                20, 10);
+                20, 8);
         Cache.addFlight(newFlight);
         
         depTime = new GregorianCalendar(2011,9,25,12,00).getTime();
@@ -57,7 +57,7 @@ public class InitFlights {
         depTime = new GregorianCalendar(2011,9,26,15,00).getTime();
         arrTime = new GregorianCalendar(2011,9,26,18,00).getTime();
         newFlight = new Flights("EZY8234", "Rhodes", "Athens", depTime, arrTime,
-                20, 5);
+                20, 9);
         Cache.addFlight(newFlight);
         
         depTime = new GregorianCalendar(2011,9,20,10,00).getTime();
@@ -68,7 +68,7 @@ public class InitFlights {
         
         depTime = new GregorianCalendar(2011,9,20,11,00).getTime();
         arrTime = new GregorianCalendar(2011,9,20,14,00).getTime();
-        newFlight = new Flights("EZY9234", "Thessaloniki", "Rhodes", depTime,
+        newFlight = new Flights("EZY9734", "Thessaloniki", "Rhodes", depTime,
                 arrTime, 20, 18);
         Cache.addFlight(newFlight);        
     }

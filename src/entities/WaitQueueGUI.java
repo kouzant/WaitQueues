@@ -10,11 +10,7 @@
  */
 package entities;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import utilities.Timer;
-import utilities.Cache;
 import utilities.InitFlights;
 
 /**
