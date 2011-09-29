@@ -95,6 +95,9 @@ public class FinalStatistics extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void printStatsAll(String msg) {
+        jTextArea1.append(msg);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
