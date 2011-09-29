@@ -11,6 +11,8 @@
 
 package entities;
 
+import javax.swing.JTextArea;
+
 /**
  *
  * @author christos

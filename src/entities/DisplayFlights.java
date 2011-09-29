@@ -425,24 +425,44 @@ public class DisplayFlights extends javax.swing.JFrame {
         super.setVisible(false);
         FinalStatistics finStatistics = new FinalStatistics();
         finStatistics.setVisible(true);
+        Iterator<Statistics> statsIt = Cache.getFlightStats().iterator();
+        StringBuilder sb = new StringBuilder();
+        Statistics index;
+        while(statsIt.hasNext()){
+            index = statsIt.next();
+            sb.append("Flight Code: ");
+            sb.append(index.getFlightCode()).append("\n");
+            sb.append("--------------------------------");
+            sb.append("λ: ");
+            sb.append(index.getl()).append("\n");
+            sb.append("μ: ");
+            sb.append(index.getM()).append("\n");
+            sb.append("ρ: ");
+            sb.append(index.getRf()).append("\n");
+            sb.append("W: ");
+            sb.append(index.getW()).append("\n");
+            sb.append("\n").append("\n");
+            
+            finStatistics.printStatsAll(sb.toString());
+        }
         BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
         barChartL.pack();
-        barChartL.setLocation(640, 50);
+        barChartL.setLocation(640, 20);
         barChartL.setVisible(true);
         
         BarChartM barChartM = new BarChartM("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Μέσος ρυθμός στη φάση της εξυπηρέτησης (μ)", 
                 Cache.getFlightStats());
         barChartM.pack();
-        barChartM.setLocation(20, 50);
+        barChartM.setLocation(20, 20);
         barChartM.setVisible(true);
         
         BarChartR barChartR = new BarChartR("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Βαθμός ενεργοποίησης συστήματος (ρ)", 
                 Cache.getFlightStats());
         barChartR.pack();
-        barChartR.setLocation(50, 700);
+        barChartR.setLocation(20, 520);
         barChartR.setVisible(true);
     }//GEN-LAST:event_stopSimulation
 

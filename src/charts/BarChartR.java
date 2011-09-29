@@ -37,7 +37,7 @@ public class BarChartR extends JFrame{
         Statistics inStat = null;
         while(statIt.hasNext()){
             inStat = statIt.next();
-            dataset.addValue(new Float(inStat.getR()), "ρ",
+            dataset.addValue(inStat.getRf(), "ρ",
                     inStat.getFlightCode());
         }
         return dataset;
@@ -49,7 +49,7 @@ public class BarChartR extends JFrame{
             CategoryPlot plot = (CategoryPlot) chart.getPlot();
             plot.setForegroundAlpha(0.6f);
             NumberAxis3D axisRange = (NumberAxis3D) plot.getRangeAxis();
-            axisRange.setStandardTickUnits(NumberAxis3D.createIntegerTickUnits());
+            //axisRange.setStandardTickUnits(NumberAxis3D.createIntegerTickUnits());
             
             CategoryAxis3D domainAxis = (CategoryAxis3D) plot.getDomainAxis();
             domainAxis.setCategoryLabelPositions(
