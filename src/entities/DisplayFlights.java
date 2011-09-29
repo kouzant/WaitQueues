@@ -423,6 +423,8 @@ public class DisplayFlights extends javax.swing.JFrame {
     private void stopSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulation
         // jButton1 handler:
         super.setVisible(false);
+        FinalStatistics finStatistics = new FinalStatistics();
+        finStatistics.setVisible(true);
         BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
         barChartL.pack();
