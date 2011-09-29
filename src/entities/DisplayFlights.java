@@ -432,7 +432,7 @@ public class DisplayFlights extends javax.swing.JFrame {
             index = statsIt.next();
             sb.append("Flight Code: ");
             sb.append(index.getFlightCode()).append("\n");
-            sb.append("--------------------------------");
+            sb.append("-----------------").append("\n");
             sb.append("λ: ");
             sb.append(index.getl()).append("\n");
             sb.append("μ: ");
