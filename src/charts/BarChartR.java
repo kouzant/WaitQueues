@@ -49,7 +49,7 @@ public class BarChartR extends JFrame{
             CategoryPlot plot = (CategoryPlot) chart.getPlot();
             plot.setForegroundAlpha(0.6f);
             NumberAxis3D axisRange = (NumberAxis3D) plot.getRangeAxis();
-            axisRange.setStandardTickUnits(NumberAxis3D.createIntegerTickUnits());
+            //axisRange.setStandardTickUnits(NumberAxis3D.createIntegerTickUnits());
             
             CategoryAxis3D domainAxis = (CategoryAxis3D) plot.getDomainAxis();
             domainAxis.setCategoryLabelPositions(
