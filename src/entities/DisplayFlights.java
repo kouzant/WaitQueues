@@ -425,6 +425,26 @@ public class DisplayFlights extends javax.swing.JFrame {
         super.setVisible(false);
         FinalStatistics finStatistics = new FinalStatistics();
         finStatistics.setVisible(true);
+        Iterator<Statistics> statsIt = Cache.getFlightStats().iterator();
+        StringBuilder sb = new StringBuilder();
+        Statistics index;
+        while(statsIt.hasNext()){
+            index = statsIt.next();
+            sb.append("Flight Code: ");
+            sb.append(index.getFlightCode()).append("\n");
+            sb.append("--------------------------------");
+            sb.append("λ: ");
+            sb.append(index.getl()).append("\n");
+            sb.append("μ: ");
+            sb.append(index.getM()).append("\n");
+            sb.append("ρ: ");
+            sb.append(index.getRf()).append("\n");
+            sb.append("W: ");
+            sb.append(index.getW()).append("\n");
+            sb.append("\n").append("\n");
+            
+            finStatistics.printStatsAll(sb.toString());
+        }
         BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
         barChartL.pack();
