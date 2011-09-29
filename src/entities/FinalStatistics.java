@@ -8,10 +8,9 @@
  *
  * Created on Sep 29, 2011, 3:37:05 AM
  */
-
 package entities;
 
-import javax.swing.JTextArea;
+import java.io.*;
 
 /**
  *
@@ -106,5 +105,4 @@ public class FinalStatistics extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
-
 }
