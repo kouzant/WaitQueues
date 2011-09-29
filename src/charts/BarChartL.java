@@ -2,12 +2,14 @@ package charts;
 
 import entities.Statistics;
 
+import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JFrame;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis3D;
 import org.jfree.chart.axis.CategoryLabelPositions;
@@ -29,6 +31,12 @@ public class BarChartL extends JFrame{
         ChartPanel panel = new ChartPanel(chart);
         panel.setPreferredSize(new java.awt.Dimension(600, 500));
         setContentPane(panel);
+        try{
+            ChartUtilities.saveChartAsPNG(new File("charts/lchart.png"), chart,
+                    600, 500);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
     private CategoryDataset createDataset(){
