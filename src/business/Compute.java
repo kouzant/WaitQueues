@@ -172,6 +172,7 @@ public class Compute {
        float lf = ll.floatValue();
        float mf = ml.floatValue();
        float r = lf/mf;
+       
        DecimalFormat df = new DecimalFormat("#.###");
        stats.setR(df.format(r));
        

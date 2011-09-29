@@ -67,6 +67,9 @@ public class Statistics {
     public String getW(){
         return W;
     }
+    public String getR(){
+        return r;
+    }
     
     @Override
     public String toString(){

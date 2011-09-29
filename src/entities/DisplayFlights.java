@@ -422,10 +422,18 @@ public class DisplayFlights extends javax.swing.JFrame {
         barChartL.setVisible(true);
         
         BarChartM barChartM = new BarChartM("Προσομοίωση κράτησης αεροπορικών"
-                + " εισητηρίων", "Μέσος ρυθμός στη φάση της εξυπηρέτησης (μ)", Cache.getFlightStats());
+                + " εισητηρίων", "Μέσος ρυθμός στη φάση της εξυπηρέτησης (μ)", 
+                Cache.getFlightStats());
         barChartM.pack();
         barChartM.setLocation(20, 50);
         barChartM.setVisible(true);
+        
+        BarChartR barChartR = new BarChartR("Προσομοίωση κράτησης αεροπορικών"
+                + " εισητηρίων", "Βαθμός ενεργοποίησης συστήματος (ρ)", 
+                Cache.getFlightStats());
+        barChartR.pack();
+        barChartR.setLocation(50, 700);
+        barChartR.setVisible(true);
     }//GEN-LAST:event_stopSimulation
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
