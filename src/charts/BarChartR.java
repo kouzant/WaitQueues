@@ -37,7 +37,7 @@ public class BarChartR extends JFrame{
         Statistics inStat = null;
         while(statIt.hasNext()){
             inStat = statIt.next();
-            dataset.addValue(new Float(inStat.getR()), "ρ",
+            dataset.addValue(inStat.getRf(), "ρ",
                     inStat.getFlightCode());
         }
         return dataset;

@@ -8,6 +8,7 @@ public class Statistics {
     private long m;
     
     private String r;
+    private float rf;
     //mesos xronos anamonhs
     private long Wq;
     private long Ws;
@@ -49,6 +50,9 @@ public class Statistics {
     public void setW(String W){
         this.W = W;
     }
+    public void setRf(float rf){
+        this.rf = rf;
+    }
     public long getLq(){
         return Lq;
     }
@@ -69,6 +73,9 @@ public class Statistics {
     }
     public String getR(){
         return r;
+    }
+    public float getRf(){
+        return rf;
     }
     
     @Override
