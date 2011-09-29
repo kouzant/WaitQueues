@@ -11,6 +11,7 @@ public class Cache {
     private static LinkedList<Statistics> flightStats;
     private static LinkedList<Bookings> customers;
     private static long startTime=0L;
+    private static boolean deleted;
    
     public Cache(){
         flights = new LinkedList<Flights>();
@@ -40,5 +41,11 @@ public class Cache {
     }
     public static LinkedList<Bookings> getCustomers(){
         return customers;
+    }
+    public static void setDeleted(boolean deleteda){
+        deleted = deleteda;
+    }
+    public static boolean getDeleted(){
+        return deleted;
     }
 }

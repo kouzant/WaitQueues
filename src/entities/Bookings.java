@@ -14,6 +14,7 @@ public class Bookings {
     private int cardCode;
     private long bookWaitStart;
     private long bookServTime;
+    private long arrTime;
     private String bookID;
 
     public Bookings(String id, String passportID, String firstName,
@@ -66,6 +67,9 @@ public class Bookings {
     public long getBookServTime(){
         return bookServTime;
     }
+    public long getArrTime(){
+        return arrTime;
+    }
     public void setId(String id){
         this.id = id;
     }
@@ -86,6 +90,9 @@ public class Bookings {
     }
     public void setBookServTime(long bookServTime){
         this.bookServTime = bookServTime;
+    }
+    public void setArrTime(long arrTime){
+        this.arrTime = arrTime;
     }
     
     @Override

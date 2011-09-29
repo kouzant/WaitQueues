@@ -11,6 +11,8 @@
 package entities;
 
 import java.util.Date;
+import utilities.BookParser;
+import utilities.ConfigParser;
 
 /**
  *
@@ -23,7 +25,7 @@ public class ReservationGUI extends javax.swing.JFrame {
             String arrival, Date depTime,
             Date arrTime, int totalSeats, int availSeats) {
         initComponents();
-        
+
         jTextField10.setText(fCode);
         jTextField11.setText(departure);
         jTextField12.setText(arrival);
@@ -56,7 +58,6 @@ public class ReservationGUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
@@ -74,12 +75,10 @@ public class ReservationGUI extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -107,13 +106,6 @@ public class ReservationGUI extends javax.swing.JFrame {
         jLabel8.setText("Διαθέσιμες:");
 
         jLabel9.setText("Κρατημένες:");
-
-        jButton2.setText("Στοιχεία Κρατήσεων");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                displayReservationsData(evt);
-            }
-        });
 
         jTextField10.setEditable(false);
         jTextField10.setText(" ");
@@ -170,10 +162,6 @@ public class ReservationGUI extends javax.swing.JFrame {
                     .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                     .addComponent(jTextField14))
                 .addContainerGap(127, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(451, 451, 451)
-                .addComponent(jButton2)
-                .addContainerGap(354, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,9 +193,7 @@ public class ReservationGUI extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(19, 19, 19)
-                .addComponent(jButton2)
-                .addContainerGap())
+                .addGap(56, 56, 56))
         );
 
         buttonGroup3.add(jRadioButton1);
@@ -236,8 +222,6 @@ public class ReservationGUI extends javax.swing.JFrame {
 
         jLabel14.setText("Διεύθυνση:");
 
-        jLabel15.setText("Κωδ. Πτήσης:");
-
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("editable"));
         bindingGroup.addBinding(binding);
 
@@ -248,9 +232,6 @@ public class ReservationGUI extends javax.swing.JFrame {
         bindingGroup.addBinding(binding);
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextField4, org.jdesktop.beansbinding.BeanProperty.create("editable"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextField5, org.jdesktop.beansbinding.BeanProperty.create("editable"));
         bindingGroup.addBinding(binding);
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextField6, org.jdesktop.beansbinding.BeanProperty.create("editable"));
@@ -265,7 +246,7 @@ public class ReservationGUI extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jRadioButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), jTextField9, org.jdesktop.beansbinding.BeanProperty.create("editable"));
         bindingGroup.addBinding(binding);
 
-        jButton3.setText("Ακύρωση");
+        jButton3.setText("Πίσω");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -293,12 +274,10 @@ public class ReservationGUI extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel4)
                                             .addComponent(jLabel11)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel15))
+                                            .addComponent(jLabel13))
                                         .addGap(16, 16, 16)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                                     .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                                     .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
@@ -311,7 +290,7 @@ public class ReservationGUI extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(jLabel14)
                             .addComponent(jLabel16)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField4)
@@ -329,7 +308,7 @@ public class ReservationGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jRadioButton1)
                 .addGap(18, 18, 18)
@@ -359,9 +338,7 @@ public class ReservationGUI extends javax.swing.JFrame {
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel16))
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
@@ -376,11 +353,23 @@ public class ReservationGUI extends javax.swing.JFrame {
 
     private void doReservation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doReservation
         //if (jRadioButton1.isEnabled()) // jTextPane1 contents
+        ConfigParser cp = new ConfigParser();
+        String parseFile = cp.getFile(jTextField10.getText());
+        BookParser bookParser = new BookParser(parseFile);
+        if (jRadioButton1.isSelected()) {
+            bookParser.parseBooks();
+        } else {
+            String bookID = bookParser.parseBook(jTextField2.getText(), jTextField6.getText(),
+                    jTextField1.getText(), jTextField4.getText(),
+                    jTextField3.getText(), jTextField7.getText(),
+                    jTextField10.getText(), jTextField8.getText(),
+                    jTextField9.getText());
+            super.setVisible(false);
+            ReservationSuccessful reservSuccess = new ReservationSuccessful();
+            reservSuccess.setVisible(true);
+            reservSuccess.printReservCode(bookID);
+        }
     }//GEN-LAST:event_doReservation
-
-    private void displayReservationsData(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayReservationsData
-        // jButton2 handler:
-}//GEN-LAST:event_displayReservationsData
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -388,13 +377,11 @@ public class ReservationGUI extends javax.swing.JFrame {
         DisplayFlights newDisplayFlights = new DisplayFlights();
         newDisplayFlights.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -402,7 +389,6 @@ public class ReservationGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
@@ -428,7 +414,6 @@ public class ReservationGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;

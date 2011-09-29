@@ -10,12 +10,14 @@
  */
 package entities;
 
+import business.CancelBook;
 import java.util.LinkedList;
 import java.util.Iterator;
 import java.util.GregorianCalendar;
 import java.util.Date;
 
 import utilities.Cache;
+import charts.*;
 
 /**
  *
@@ -127,9 +129,9 @@ public class DisplayFlights extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jRadioButton4)))
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(673, Short.MAX_VALUE)
+                .addContainerGap(700, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -191,10 +193,6 @@ public class DisplayFlights extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(733, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +215,11 @@ public class DisplayFlights extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(760, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,9 +238,9 @@ public class DisplayFlights extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap())
+                .addGap(6, 6, 6))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ακύρωση Κράτησης", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 0, 51))); // NOI18N
@@ -267,9 +269,9 @@ public class DisplayFlights extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(745, Short.MAX_VALUE)
+                .addContainerGap(760, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addContainerGap())
         );
@@ -308,15 +310,15 @@ public class DisplayFlights extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(jLabel1)
-                            .addGap(41, 41, 41)))
+                            .addGap(41, 41, 41))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(345, 345, 345))))
@@ -403,10 +405,65 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void flightCancellation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightCancellation
         // jButton4 handler:
+        String flightCode = jTextField1.getText().toUpperCase();
+        String bookID = jTextField2.getText();
+
+        super.setVisible(false);
+        new CancelBook(bookID, flightCode);
+        CancellationSuccess cancellation = new CancellationSuccess();
+        cancellation.setVisible(true);
+        if (Cache.getDeleted()) {
+            cancellation.displayWindow("Η κράτηση ακυρώθηκε επιτυχώς!");
+        } else {
+            cancellation.displayWindow("Η ακύρωση της κράτησης απέτυχε!");
+        }
+        
     }//GEN-LAST:event_flightCancellation
 
     private void stopSimulation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulation
         // jButton1 handler:
+        super.setVisible(false);
+        FinalStatistics finStatistics = new FinalStatistics();
+        finStatistics.setVisible(true);
+        Iterator<Statistics> statsIt = Cache.getFlightStats().iterator();
+        StringBuilder sb = new StringBuilder();
+        Statistics index;
+        while(statsIt.hasNext()){
+            index = statsIt.next();
+            sb.append("Flight Code: ");
+            sb.append(index.getFlightCode()).append("\n");
+            sb.append("--------------------------------\n");
+            sb.append("λ: ");
+            sb.append(index.getl()).append("\n");
+            sb.append("μ: ");
+            sb.append(index.getM()).append("\n");
+            sb.append("ρ: ");
+            sb.append(index.getRf()).append("\n");
+            sb.append("W: ");
+            sb.append(index.getW()).append("\n");
+            sb.append("\n").append("\n");
+            
+            finStatistics.printStatsAll(sb.toString());
+        }
+        BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
+                + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
+        barChartL.pack();
+        barChartL.setLocation(640, 20);
+        barChartL.setVisible(true);
+        
+        BarChartM barChartM = new BarChartM("Προσομοίωση κράτησης αεροπορικών"
+                + " εισητηρίων", "Μέσος ρυθμός στη φάση της εξυπηρέτησης (μ)", 
+                Cache.getFlightStats());
+        barChartM.pack();
+        barChartM.setLocation(20, 20);
+        barChartM.setVisible(true);
+        
+        BarChartR barChartR = new BarChartR("Προσομοίωση κράτησης αεροπορικών"
+                + " εισητηρίων", "Βαθμός ενεργοποίησης συστήματος (ρ)", 
+                Cache.getFlightStats());
+        barChartR.pack();
+        barChartR.setLocation(20, 520);
+        barChartR.setVisible(true);
     }//GEN-LAST:event_stopSimulation
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -477,7 +534,7 @@ public class DisplayFlights extends javax.swing.JFrame {
         String case3[] = new String[]{"11:00"};
         String case4[] = new String[]{"10:45"};
         String case5[] = new String[]{"12:00"};
-        String case6[] = new String[]{"09:00", "13:00"};
+        String case6[] = new String[]{"09:00", "15:00"};
         String case7[] = new String[]{"21:00"};
         String case8[] = new String[]{"23:10"};
         javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
@@ -487,9 +544,9 @@ public class DisplayFlights extends javax.swing.JFrame {
             if (startpoint.equals("Athens")) {
                 jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case1));
             } else if (startpoint.equals("Thessaloniki")) {
-                jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case2));
-            } else {
                 jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case3));
+            } else {
+                jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case2));
             }
         } else if (depDate.equals("22/10/2011")) {
             jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case4));

@@ -8,10 +8,11 @@ public class Statistics {
     private long m;
     
     private String r;
+    private float rf;
     //mesos xronos anamonhs
     private long Wq;
     private long Ws;
-    private long W;
+    private String W;
     private long Lq;
     private long Ls;
     private long L;
@@ -46,6 +47,12 @@ public class Statistics {
     public void setR(String r){
         this.r = r;
     }
+    public void setW(String W){
+        this.W = W;
+    }
+    public void setRf(float rf){
+        this.rf = rf;
+    }
     public long getLq(){
         return Lq;
     }
@@ -61,6 +68,15 @@ public class Statistics {
     public long getM(){
         return m;
     }
+    public String getW(){
+        return W;
+    }
+    public String getR(){
+        return r;
+    }
+    public float getRf(){
+        return rf;
+    }
     
     @Override
     public String toString(){
@@ -69,6 +85,7 @@ public class Statistics {
         sb.append("l: "+l).append("\n");
         sb.append("m: "+m).append("\n");
         sb.append("r: "+r).append("\n");
+        sb.append("W: "+W).append("\n");
         
         return sb.toString();
     }

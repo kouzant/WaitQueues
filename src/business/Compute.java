@@ -8,6 +8,7 @@ import entities.Flights;
 import entities.Statistics;
 import entities.Bookings;
 import java.text.DecimalFormat;
+import utilities.Timer;
 
 public class Compute {
     private LinkedList<Bookings> customers;
@@ -139,22 +140,24 @@ public class Compute {
        int bSize = bList.size();
        int wSize = wList.size();
        long servTimeInter=0L;
-       
-        if (bSize == 1) {
-            servTimeInter = servTimeInter + bList.get(0).getBookServTime();
+       Timer timer = new Timer();
+       if(bSize == 0)
+           servTimeInter = 0;
+        else if(bSize == 1) {
+            servTimeInter = servTimeInter + timer.getTime();
         } else {
-            for (int i = 0; i < bSize; i++) {
-                long diff = bList.get(i + 1).getBookServTime()
-                        - bList.get(i).getBookServTime();
+            for (int i = 0; i < (bSize-1); i++) {
+                long diff = bList.get(i + 1).getArrTime()
+                        - bList.get(i).getArrTime();
                 servTimeInter = servTimeInter + diff;
             }
         }
         if (wSize == 1) {
-            servTimeInter = servTimeInter + wList.get(0).getBookServTime();
-        } else {
-            for (int i = 0; i < wSize; i++) {
-                long diff = wList.get(i + 1).getBookServTime()
-                        - wList.get(i).getBookServTime();
+            servTimeInter = servTimeInter + timer.getTime();
+        } else if (wSize > 1){
+            for (int i = 0; i < (wSize-1); i++) {
+                long diff = wList.get(i + 1).getArrTime()
+                        - wList.get(i).getArrTime();
                 servTimeInter = servTimeInter + diff;
             }
         }
@@ -163,13 +166,19 @@ public class Compute {
        long l = 3600000 / meanServInter;
        System.err.println("l/h: "+l);
        stats.setl(l);
+       
        Long ll = new Long(l);
        Long ml = new Long(m);
        float lf = ll.floatValue();
        float mf = ml.floatValue();
        float r = lf/mf;
+       stats.setRf(r);
+       
        DecimalFormat df = new DecimalFormat("#.###");
        stats.setR(df.format(r));
+       
+       float w = 1 / (mf - lf);
+       stats.setW(df.format(w));
     }
     
     public void printStats(){
