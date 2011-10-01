@@ -8,7 +8,7 @@
  *
  * Created on Sep 2, 2011, 10:25:08 PM
  */
-package entities;
+package gui;
 
 import business.CancelBook;
 import java.util.LinkedList;
@@ -18,6 +18,8 @@ import java.util.Date;
 
 import utilities.Cache;
 import charts.*;
+import entities.Flights;
+import entities.Statistics;
 
 /**
  *
@@ -432,7 +434,7 @@ public class DisplayFlights extends javax.swing.JFrame {
             index = statsIt.next();
             sb.append("Flight Code: ");
             sb.append(index.getFlightCode()).append("\n");
-            sb.append("--------------------------------\n");
+            sb.append("-----------------\n");
             sb.append("λ: ");
             sb.append(index.getl()).append("\n");
             sb.append("μ: ");

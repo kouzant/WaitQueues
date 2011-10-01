@@ -8,8 +8,9 @@
  *
  * Created on Sep 26, 2011, 4:09:05 PM
  */
-package entities;
+package gui;
 
+import gui.DisplayFlights;
 import utilities.Timer;
 import utilities.InitFlights;
 
@@ -96,7 +97,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(672, Short.MAX_VALUE))
+                .addContainerGap(783, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,10 +119,10 @@ public class WaitQueueGUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Στοιχεία Μελών Ομάδας Εργασίας"));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 3, 13));
         jLabel4.setText("Πρώτο Μέλος");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 3, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Dialog", 3, 13));
         jLabel5.setText("Δεύτερο Μέλος:");
 
         jLabel6.setText("Όνομα:");
@@ -179,7 +180,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel12))
@@ -193,7 +194,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel13)
                             .addComponent(jLabel11)))
@@ -238,7 +239,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Πληροφορίες Προγράμματος"));
 
-        jTextPane1.setText("Το παρόν πρόγραμμα προσομοιώνει ένα σύστημα κράτησης αεροπορικών εισητηρίων και υπολογίζει τα μεγέθη που αφορούν τις ουρές αναμονής των πελατών για κάθε πτήση. \nΣυγκεκριμένα υπολογίζεται:\n\t- ο μέσος ρυθμός αφίξεων (λ) για κάθε ουρά και στο σύστημα συνολικά, \n\t- ο μέσος ρυθμός στη φάση εξυπηρέτησης (μ), \n\t- ο βαθμός ενεργοποίηση (ρ) του συστήματος, \n\t- ο μέσος αριθμός ατόμων στην ουρά (Νq) και \n\t- ο μέσος χρόνος αναμονής στο σύστημα (W).");
+        jTextPane1.setText("Το παρόν πρόγραμμα προσομοιώνει ένα σύστημα κράτησης αεροπορικών εισητηρίων και υπολογίζει τα μεγέθη που αφορούν τις ουρές αναμονής των πελατών για κάθε πτήση. \nΣυγκεκριμένα υπολογίζεται:\n\t- ο μέσος ρυθμός αφίξεων (λ) για κάθε ουρά και στο σύστημα συνολικά, \n\t- ο μέσος ρυθμός στη φάση εξυπηρέτησης (μ), \n\t- ο βαθμός ενεργοποίηση (ρ) του συστήματος και\n\t- ο μέσος χρόνος αναμονής στο σύστημα (W).");
         jScrollPane1.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -247,7 +248,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 883, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(

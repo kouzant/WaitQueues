@@ -4,43 +4,26 @@
  */
 
 /*
- * PrintFlightData.java
+ * CancellationSuccess.java
  *
- * Created on Sep 28, 2011, 3:33:44 PM
+ * Created on Sep 29, 2011, 2:24:49 AM
  */
 
-package entities;
-
-import java.util.LinkedList;
-import java.util.Iterator;
+package gui;
 
 /**
  *
  * @author christos
  */
-public class PrintFlightData extends javax.swing.JFrame {
+public class CancellationSuccess extends javax.swing.JFrame {
 
-    /** Creates new form PrintFlightData */
-    public PrintFlightData() {
-
+    /** Creates new form CancellationSuccess */
+    public CancellationSuccess() {
         initComponents();
-
     }
 
-    public void dispData(LinkedList<Flights> listF) {
-        Iterator<Flights> listIt = listF.iterator();
-        Flights flight;
-
-        jTextArea1.append("Flight Code\t\tDeparture from\tArrival to\t\tDeparture Date\t\tArrival Date\t\t\tTotal Seats\n");
-         while (listIt.hasNext()) {
-             flight = listIt.next();
-             jTextArea1.append(flight.getFlightCode() + "\t\t" +
-                     flight.getDeparture() + "\t\t" +
-                     flight.getArrival() + "\t\t" +
-                     flight.getDepTime().toString() + "\t" +
-                     flight.getArrTime().toString() + "\t" +
-                     Integer.toString(flight.getTotalSeats()) + '\n');
-        }
+    public void displayWindow(String msg) {
+        jTextField1.setText(msg);
     }
 
     /** This method is called from within the constructor to
@@ -53,18 +36,13 @@ public class PrintFlightData extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Στοιχεία Πτήσεων");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18));
+        jLabel1.setText("Aκύρωση Κράτησης");
 
         jButton1.setText("Κλείσιμο");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,33 +51,35 @@ public class PrintFlightData extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setFont(new java.awt.Font("Dialog", 1, 14));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(408, 408, 408))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(366, 366, 366))))
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -108,17 +88,25 @@ public class PrintFlightData extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         super.setVisible(false);
+        DisplayFlights displayFlights = new DisplayFlights();
+        displayFlights.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
     * @param args the command line arguments
     */
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CancellationSuccess().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
 }

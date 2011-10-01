@@ -8,8 +8,9 @@
  *
  * Created on Sep 25, 2011, 12:57:58 PM
  */
-package entities;
+package gui;
 
+import gui.DisplayFlights;
 import java.util.Date;
 import utilities.BookParser;
 import utilities.ConfigParser;

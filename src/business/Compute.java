@@ -178,7 +178,7 @@ public class Compute {
        stats.setR(df.format(r));
        
        float w = 1 / (mf - lf);
-       stats.setW(df.format(w));
+       stats.setW(w);
     }
     
     public void printStats(){

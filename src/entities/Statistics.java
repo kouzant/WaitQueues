@@ -12,7 +12,7 @@ public class Statistics {
     //mesos xronos anamonhs
     private long Wq;
     private long Ws;
-    private String W;
+    private float W;
     private long Lq;
     private long Ls;
     private long L;
@@ -47,7 +47,7 @@ public class Statistics {
     public void setR(String r){
         this.r = r;
     }
-    public void setW(String W){
+    public void setW(float W){
         this.W = W;
     }
     public void setRf(float rf){
@@ -68,7 +68,7 @@ public class Statistics {
     public long getM(){
         return m;
     }
-    public String getW(){
+    public float getW(){
         return W;
     }
     public String getR(){

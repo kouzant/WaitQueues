@@ -8,7 +8,7 @@
  *
  * Created on Sep 29, 2011, 3:37:05 AM
  */
-package entities;
+package gui;
 
 import java.io.*;
 
@@ -40,12 +40,12 @@ public class FinalStatistics extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.darkGray);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14));
         jLabel1.setText("Συγκεντρωτικά Στατιστικά Στοιχεία");
 
         jTextArea1.setBackground(java.awt.Color.black);
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 12));
         jTextArea1.setForeground(java.awt.Color.green);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -73,7 +73,7 @@ public class FinalStatistics extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(326, 326, 326)
                 .addComponent(jLabel1)
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

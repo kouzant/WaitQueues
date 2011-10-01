@@ -5,8 +5,7 @@
     <property name="lib.dir"        value="lib"/>
     <property name="classes.dir"    value="${build.dir}/classes"/>
     <property name="jar.dir"        value="${build.dir}/jar"/>
-    <property name="main-class"     value="entities.WaitQueueGUI"/>
-    <property name="main-class1"     value="testing.ParserTest"/>
+    <property name="main-class"     value="gui.WaitQueueGUI"/>
 
     <path id="classpath">
         <fileset dir="${lib.dir}" includes="**/*.jar"/>
@@ -43,24 +42,4 @@
     <target name="clean-build" depends="clean,jar"/>
 
     <target name="main" depends="clean,run"/>
-
-    <!-- targets to run with different entry point-->
-    <target name="jar1" depends="compile">
-        <mkdir dir="${jar.dir}"/>
-        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
-            <zipgroupfileset dir="${lib.dir}" includes="*.jar"/>
-            <manifest>
-                <attribute name="Main-Class"    value="${main-class1}"/>
-            </manifest>
-        </jar>
-    </target>
-
-    <target name="test" depends="jar1">
-        <java fork="true" classname="${main-class1}">
-            <classpath>
-                <path refid="classpath"/>
-                <path location="${jar.dir}/${ant.project.name}.jar"/>
-            </classpath>
-        </java>
-    </target>
 </project>
