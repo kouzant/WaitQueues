@@ -30,7 +30,6 @@ public class Booking {
         }
         Hash hash = new Hash();
         String bookID = hash.MD5(id.concat(flightCode));
-        System.err.println("Book ID: " + bookID);
         Bookings newCustomer = new Bookings(id, passportID, firstName, lastName,
                 phNumber, address, flightCode, cardSerial,
                 cardCode, delay, bookID);
