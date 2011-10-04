@@ -97,7 +97,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(783, Short.MAX_VALUE))
+                .addContainerGap(832, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +239,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Πληροφορίες Προγράμματος"));
 
-        jTextPane1.setText("Το παρόν πρόγραμμα προσομοιώνει ένα σύστημα κράτησης αεροπορικών εισητηρίων και υπολογίζει τα μεγέθη που αφορούν τις ουρές αναμονής των πελατών για κάθε πτήση. \nΣυγκεκριμένα υπολογίζεται:\n\t- ο μέσος ρυθμός αφίξεων (λ) για κάθε ουρά και στο σύστημα συνολικά, \n\t- ο μέσος ρυθμός στη φάση εξυπηρέτησης (μ), \n\t- ο βαθμός ενεργοποίηση (ρ) του συστήματος και\n\t- ο μέσος χρόνος αναμονής στο σύστημα (W).");
+        jTextPane1.setText("Το παρόν πρόγραμμα προσομοιώνει ένα σύστημα κράτησης αεροπορικών εισητηρίων και υπολογίζει \nτα μεγέθη που αφορούν τις ουρές αναμονής των πελατών για κάθε πτήση. \nΣυγκεκριμένα υπολογίζεται:\n\t- ο μέσος ρυθμός αφίξεων (λ) για κάθε ουρά και στο σύστημα συνολικά, \n\t- ο μέσος ρυθμός στη φάση εξυπηρέτησης (μ), \n\t- ο βαθμός ενεργοποίηση (ρ) του συστήματος και\n\t- ο μέσος χρόνος αναμονής στο σύστημα (W).");
         jScrollPane1.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -248,7 +248,7 @@ public class WaitQueueGUI extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1043, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(

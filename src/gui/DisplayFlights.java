@@ -470,9 +470,9 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[]{"Thessaloniki", "Rhodes"};
-        String case2[] = new String[]{"Athens", "Rhodes"};
-        String case3[] = new String[]{"Athens", "Thessaloniki"};
+        String case1[] = new String[]{"-------------", "Thessaloniki", "Rhodes"};
+        String case2[] = new String[]{"-------------", "Athens", "Rhodes"};
+        String case3[] = new String[]{"-------------", "Athens", "Thessaloniki"};
         javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
         String startpoint = (String) cb.getSelectedItem();
         if (startpoint.equals("Athens")) {
@@ -486,9 +486,9 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[]{"Thessaloniki", "Rhodes"};
-        String case2[] = new String[]{"Athens", "Rhodes"};
-        String case3[] = new String[]{"Athens", "Thessaloniki"};
+        String case1[] = new String[]{"-------------", "Thessaloniki", "Rhodes"};
+        String case2[] = new String[]{"-------------", "Athens", "Rhodes"};
+        String case3[] = new String[]{"-------------", "Athens", "Thessaloniki"};
         String case4[] = new String[]{" "};
         javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(case4));
@@ -505,11 +505,11 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[]{"20/10/2011", "28/10/2011"};
-        String case2[] = new String[]{"22/10/2011", "30/10/2011"};
-        String case3[] = new String[]{"23/10/2011", "25/10/2011"};
-        String case4[] = new String[]{"26/10/2011"};
-        String case5[] = new String[]{"20/10/2011"};
+        String case1[] = new String[]{"----------", "20/10/2011", "28/10/2011"};
+        String case2[] = new String[]{"----------", "22/10/2011", "30/10/2011"};
+        String case3[] = new String[]{"----------", "23/10/2011", "25/10/2011"};
+        String case4[] = new String[]{"----------", "26/10/2011"};
+        String case5[] = new String[]{"----------", "20/10/2011"};
         String case6[] = new String[]{" "};
         javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(case6));
@@ -531,14 +531,14 @@ public class DisplayFlights extends javax.swing.JFrame {
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
         // TODO add your handling code here:
-        String case1[] = new String[]{"09:00"};
-        String case2[] = new String[]{"10:00"};
-        String case3[] = new String[]{"11:00"};
-        String case4[] = new String[]{"10:45"};
-        String case5[] = new String[]{"12:00"};
-        String case6[] = new String[]{"09:00", "15:00"};
-        String case7[] = new String[]{"21:00"};
-        String case8[] = new String[]{"23:10"};
+        String case1[] = new String[]{"-----", "09:00"};
+        String case2[] = new String[]{"-----", "10:00"};
+        String case3[] = new String[]{"-----", "11:00"};
+        String case4[] = new String[]{"-----", "10:45"};
+        String case5[] = new String[]{"-----", "12:00"};
+        String case6[] = new String[]{"-----", "09:00", "15:00"};
+        String case7[] = new String[]{"-----", "21:00"};
+        String case8[] = new String[]{"-----", "23:10"};
         javax.swing.JComboBox cb = (javax.swing.JComboBox) evt.getSource();
         String startpoint = (String) jComboBox3.getSelectedItem();
         String depDate = (String) cb.getSelectedItem();
