@@ -10,6 +10,7 @@ import charts.*;
 import entities.Flights;
 import entities.Statistics;
 import business.CancelBook;
+import java.io.File;
 
 public class DisplayFlights extends javax.swing.JFrame {
 
@@ -433,6 +434,10 @@ public class DisplayFlights extends javax.swing.JFrame {
             
             finStatistics.printStatsAll(sb.toString());
         }
+        
+        File chartDir = new File("charts");
+        if (!chartDir.exists())
+            chartDir.mkdir();
         BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
         barChartL.pack();
