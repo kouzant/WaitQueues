@@ -1,16 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * WaitQueueGUI.java
- *
- * Created on Sep 2, 2011, 10:25:08 PM
- */
 package gui;
 
-import business.CancelBook;
 import java.util.LinkedList;
 import java.util.Iterator;
 import java.util.GregorianCalendar;
@@ -20,11 +9,9 @@ import utilities.Cache;
 import charts.*;
 import entities.Flights;
 import entities.Statistics;
+import business.CancelBook;
+import java.io.File;
 
-/**
- *
- * @author christos
- */
 public class DisplayFlights extends javax.swing.JFrame {
 
     /** Creates new form DisplayFlights */
@@ -447,6 +434,10 @@ public class DisplayFlights extends javax.swing.JFrame {
             
             finStatistics.printStatsAll(sb.toString());
         }
+        
+        File chartDir = new File("charts");
+        if (!chartDir.exists())
+            chartDir.mkdir();
         BarChartL barChartL = new BarChartL("Προσομοίωση κράτησης αεροπορικών"
                 + " εισητηρίων", "Μέσος όρος αφίξεων (λ)", Cache.getFlightStats());
         barChartL.pack();

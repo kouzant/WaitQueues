@@ -1,7 +1,5 @@
 package charts;
 
-import entities.Statistics;
-
 import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -18,6 +16,8 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
+
+import entities.Statistics;
 
 public class BarChartR extends JFrame{
     LinkedList<Statistics> stats;

@@ -8,6 +8,7 @@ import entities.Flights;
 import utilities.Cache;
 import utilities.Timer;
 import utilities.Hash;
+import utilities.Writer;
 
 public class Booking {
 
@@ -29,7 +30,6 @@ public class Booking {
         }
         Hash hash = new Hash();
         String bookID = hash.MD5(id.concat(flightCode));
-        System.err.println("Book ID: " + bookID);
         Bookings newCustomer = new Bookings(id, passportID, firstName, lastName,
                 phNumber, address, flightCode, cardSerial,
                 cardCode, delay, bookID);
@@ -44,6 +44,10 @@ public class Booking {
             flight.getAwaiting().add(newCustomer);
             flight.incrNWaitList();
         }
+        Writer writer = Cache.getWrite();
+        writer.writeString("Flight Code: "+flightCode);
+        writer.writeString("Booking Code: "+bookID);
+        writer.writeString("--------------------");
         Cache.addCustomer(newCustomer);
         Compute compute = new Compute();
         //compute.computeM(flightCode);

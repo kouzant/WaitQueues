@@ -1,19 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+package gui;
 
-/*
- * Deleted.java
- *
- * Created on Sep 28, 2011, 11:33:20 PM
- */
-package entities;
-
-/**
- *
- * @author antonis
- */
 public class Deleted extends javax.swing.JFrame {
 
     /** Creates new form Deleted */

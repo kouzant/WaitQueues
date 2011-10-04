@@ -2,12 +2,12 @@ package business;
 
 import java.util.LinkedList;
 import java.util.Iterator;
+import java.text.DecimalFormat;
 
 import utilities.Cache;
 import entities.Flights;
 import entities.Statistics;
 import entities.Bookings;
-import java.text.DecimalFormat;
 import utilities.Timer;
 
 public class Compute {
@@ -37,11 +37,9 @@ public class Compute {
         
         Statistics stat = getFStat(flightCode);
         stat.setM(m);
-        System.out.println("m: "+m);
     }
     
     public void computel(String flightCode){
-        System.out.println(flightCode);
         Iterator<Bookings> custIt = customers.iterator();
         LinkedList<Long> servTimes = new LinkedList<Long>();
         long servTimeInter = 0L;
@@ -59,11 +57,9 @@ public class Compute {
         if(servTimes.size() == 1){
             servTimeInter = servTimeInter + servTimes.get(0);
         }else if (servTimes.size() == 0){
-            System.out.println("No customers");
             nCust = 1;
             meanServTimeInter = 1;
         }else {
-            System.err.println("skjhf: "+servTimes.size());
             for(int i=0;i<(servTimes.size()-1);i++){
                 long diff = servTimes.get(i+1) - servTimes.get(i);
                 servTimeInter = servTimeInter + diff;
@@ -76,7 +72,6 @@ public class Compute {
        
        Statistics stat = getFStat(flightCode);
        stat.setl(l);
-       System.err.println("l/h: "+l);
     }
     
     private Statistics getFStat(String flightCode){
@@ -134,7 +129,6 @@ public class Compute {
            customers++;
        }
        long m = totalServTime/customers;
-       System.err.println("m: "+m);
        stats.setM(m);
        
        int bSize = bList.size();
@@ -164,7 +158,6 @@ public class Compute {
        long meanServInter = servTimeInter / (bList.size() + wList.size());
        //one hour is 3600000 ms
        long l = 3600000 / meanServInter;
-       System.err.println("l/h: "+l);
        stats.setl(l);
        
        Long ll = new Long(l);

@@ -1,0 +1,11 @@
+output=bookings.txt
+EZY1234=config/EZY1234.txt
+EZY2234=config/EZY2234.txt
+EZY3234=config/EZY3234.txt
+EZY4234=config/EZY4234.txt
+EZY5234=config/EZY5234.txt
+EZY6234=config/EZY6234.txt
+EZY7234=config/EZY7234.txt
+EZY8234=config/EZY8234.txt
+EZY9234=config/EZY9234.txt
+EZY9734=config/EZY9734.txt

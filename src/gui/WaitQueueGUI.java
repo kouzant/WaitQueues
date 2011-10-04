@@ -1,23 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * WaitQueueGUI.java
- *
- * Created on Sep 26, 2011, 4:09:05 PM
- */
 package gui;
 
-import gui.DisplayFlights;
 import utilities.Timer;
 import utilities.InitFlights;
 
-/**
- *
- * @author christos
- */
 public class WaitQueueGUI extends javax.swing.JFrame {
 
     /** Creates new form WaitQueueGUI */

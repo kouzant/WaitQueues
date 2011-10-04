@@ -10,6 +10,7 @@ public class Cache {
     private static LinkedList<Flights> flights;
     private static LinkedList<Statistics> flightStats;
     private static LinkedList<Bookings> customers;
+    private static Writer write;
     private static long startTime=0L;
     private static boolean deleted;
    
@@ -17,6 +18,7 @@ public class Cache {
         flights = new LinkedList<Flights>();
         flightStats = new LinkedList<Statistics>();
         customers = new LinkedList<Bookings>();
+        write = new Writer();
     }
     public static void addCustomer(Bookings bookings){
         customers.add(bookings);
@@ -35,6 +37,9 @@ public class Cache {
     }
     public static long getStartTime(){
         return startTime;
+    }
+    public static Writer getWrite(){
+        return write;
     }
     public static LinkedList<Statistics> getFlightStats(){
         return flightStats;

@@ -2,11 +2,10 @@ package utilities;
 
 import java.io.*;
 import java.util.concurrent.TimeUnit;
+import java.util.Random;
 
 import business.Booking;
-import business.CancelBook;
 import business.Compute;
-import java.util.Random;
 
 public class BookParser {
 
@@ -28,7 +27,6 @@ public class BookParser {
         try {
             Random random = new Random();
             sleepT = random.nextInt(10) + 3;
-            System.err.println("Delay: " + sleepT);
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -57,11 +55,9 @@ public class BookParser {
             while ((newLine = breader.readLine()) != null) {
                 String[] tokens = newLine.split("[-]");
                 long curTime = timer.getTime();
-                System.err.println("curTime: " + curTime);
                 try {
                     Random random = new Random();
                     sleepT = random.nextInt(10) + 3;
-                    System.err.println("Delay: " + 2);
                     TimeUnit.SECONDS.sleep(2);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -74,11 +70,8 @@ public class BookParser {
                         Long.valueOf(tokens[7]), Integer.parseInt(tokens[8]),
                         delay, curTime);
             }
-            book.printCustomers();
-            //new CancelBook("fa283", "EZY2234");
-            System.err.println("lala");
-            book.printCustomers();
-            compute.printStats();
+            //book.printCustomers();
+            //compute.printStats();
         } catch (FileNotFoundException e0) {
             e0.printStackTrace();
         } catch (IOException e1) {

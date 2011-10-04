@@ -81,11 +81,11 @@ public class Statistics {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Flight Code: "+flightCode).append("\n");
-        sb.append("l: "+l).append("\n");
-        sb.append("m: "+m).append("\n");
-        sb.append("r: "+r).append("\n");
-        sb.append("W: "+W).append("\n");
+        sb.append("Flight Code: ").append(flightCode).append("\n");
+        sb.append("l: ").append(l).append("\n");
+        sb.append("m: ").append(m).append("\n");
+        sb.append("r: ").append(r).append("\n");
+        sb.append("W: ").append(W).append("\n");
         
         return sb.toString();
     }

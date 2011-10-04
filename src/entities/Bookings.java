@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Date;
-
 public class Bookings {
     private String id;
     private String passportID;
