@@ -25,6 +25,7 @@ public class ConfigParser {
             }
         }
     }
+    
     public ConfigParser(File configFile){
         if(configFile.exists()){
             try{
