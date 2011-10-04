@@ -11,7 +11,7 @@ public class ConfigParser {
     private static Properties props = new Properties();
     
     public ConfigParser(){
-        File config = new File("config/config");
+        File config = new File("config/config.txt");
         if(config.exists()){
             try{
                 InputStream is = new FileInputStream(config);
