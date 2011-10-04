@@ -1,21 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * FinalStatistics.java
- *
- * Created on Sep 29, 2011, 3:37:05 AM
- */
 package gui;
 
-import java.io.*;
-
-/**
- *
- * @author christos
- */
 public class FinalStatistics extends javax.swing.JFrame {
 
     /** Creates new form FinalStatistics */

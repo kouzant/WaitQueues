@@ -1,24 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * ReservationGUI.java
- *
- * Created on Sep 25, 2011, 12:57:58 PM
- */
 package gui;
 
-import gui.DisplayFlights;
 import java.util.Date;
+
 import utilities.BookParser;
 import utilities.ConfigParser;
 
-/**
- *
- * @author christos
- */
 public class ReservationGUI extends javax.swing.JFrame {
 
     /** Creates new form ReservationGUI */

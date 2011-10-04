@@ -2,12 +2,12 @@ package business;
 
 import java.util.LinkedList;
 import java.util.Iterator;
+import java.text.DecimalFormat;
 
 import utilities.Cache;
 import entities.Flights;
 import entities.Statistics;
 import entities.Bookings;
-import java.text.DecimalFormat;
 import utilities.Timer;
 
 public class Compute {

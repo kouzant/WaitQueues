@@ -1,20 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package testing;
 
-import business.Compute;
-import entities.Flights;
-import java.io.File;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import entities.Flights;
 import utilities.*;
 
-/**
- *
- * @author antonis
- */
 public class ParserTest {
     public static void main(String args[]){
         new Cache();

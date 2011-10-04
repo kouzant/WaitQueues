@@ -1,20 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * CancellationSuccess.java
- *
- * Created on Sep 29, 2011, 2:24:49 AM
- */
-
 package gui;
 
-/**
- *
- * @author christos
- */
 public class CancellationSuccess extends javax.swing.JFrame {
 
     /** Creates new form CancellationSuccess */

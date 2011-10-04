@@ -2,11 +2,10 @@ package utilities;
 
 import java.io.*;
 import java.util.concurrent.TimeUnit;
+import java.util.Random;
 
 import business.Booking;
-import business.CancelBook;
 import business.Compute;
-import java.util.Random;
 
 public class BookParser {
 

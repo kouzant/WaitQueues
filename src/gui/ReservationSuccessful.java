@@ -1,22 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * ReservationSuccessful.java
- *
- * Created on Sep 29, 2011, 1:15:37 AM
- */
-
 package gui;
 
-import gui.DisplayFlights;
-
-/**
- *
- * @author christos
- */
 public class ReservationSuccessful extends javax.swing.JFrame {
 
     /** Creates new form ReservationSuccessful */

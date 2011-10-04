@@ -1,24 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * PrintFlightData.java
- *
- * Created on Sep 28, 2011, 3:33:44 PM
- */
-
 package gui;
 
-import entities.Flights;
 import java.util.LinkedList;
 import java.util.Iterator;
 
-/**
- *
- * @author christos
- */
+import entities.Flights;
+
 public class PrintFlightData extends javax.swing.JFrame {
 
     /** Creates new form PrintFlightData */
